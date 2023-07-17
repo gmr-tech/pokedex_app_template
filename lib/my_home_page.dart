@@ -1,6 +1,8 @@
 // ignore_for_file: public_member_api_docs
 import 'package:flutter/material.dart';
 
+import 'src/common/presentation/theme_switcher_button.dart';
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({required this.title, super.key});
 
@@ -46,10 +48,12 @@ class _MyHomePageState extends State<MyHomePage> {
         // TRY THIS: Try changing the color here to a specific color (to
         // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
         // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
+        actions: const [
+          ThemeSwitcherButton(),
+        ],
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it

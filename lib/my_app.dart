@@ -1,36 +1,46 @@
 // ignore_for_file: public_member_api_docs
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'my_home_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+  /// This widget is the root of your application.
+  ///Esse código mostra um exemplo de como usar
+  ///o pacote provider para fornecer o objeto notificador de mudanças
+  ///Ele também configura um MaterialApp com temas claro e escuro, controlados
+  ///pelo DSThemeController.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a blue toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+    ///Sempre que ocorrem mudanças no objeto notificador de mudanças,
+    ///o ChangeNotifierProvider notifica os widgets dependentes
+    ///para que eles possam reconstruir suas partes relevantes.
+    return ChangeNotifierProvider<DSThemeController>(
+      ///A função create tem como função criar instância do objeto
+      ///notificador de mudanças, e torna essa instância disponível
+      ///para todos os widgets descentes que desejam acessá-la.
+      create: (_) => DSThemeController(initialMode: DSThemeMode.light),
+
+      ///Consumer é usado para reconstruir as informações
+      ///dos widgets e objetos sobre as mudanças que ocorreram
+      ///no provedor.
+      child: Consumer<DSThemeController>(
+        builder: (
+          context,
+          DSThemeController themeController,
+          child,
+        ) =>
+            MaterialApp(
+          title: 'Flutter Demo',
+          themeMode: themeController.themeMode,
+          theme: DSTheme.lightThemeData,
+          darkTheme: DSTheme.darkThemeData,
+          home: const MyHomePage(title: 'Flutter Demo Home Page'),
+        ),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }

@@ -1,5 +1,4 @@
 // ignore_for_file: public_member_api_docs
-import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -76,10 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              // style: Theme.of(context).textTheme.headlineMedium,
-              style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-                fontFamily: DSBaseTypography.poppinsFont,
-              ),
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
         ),

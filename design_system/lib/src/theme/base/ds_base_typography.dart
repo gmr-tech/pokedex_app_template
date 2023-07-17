@@ -99,7 +99,7 @@ class DSBaseTypography {
     ),
   );
 
-  static const TextStyle pokemonID = TextStyle(
+  static const TextStyle example = TextStyle(
     fontFamily: poppinsFont,
     fontWeight: FontWeight.w500,
     fontSize: 10,

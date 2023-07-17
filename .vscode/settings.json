@@ -1,0 +1,16 @@
+{
+    //  Essa configuração define o caminho para o SDK do Flutter usado pelo projeto. 
+    /// No caso, está definido como .fvm/flutter_sdk, indicando que o SDK do Flutter está localizado no diretório .fvm/flutter_sdk.
+    ///  O FVM geralmente instala as versões do Flutter dentro do diretório .fvm na raiz do projeto.
+    "dart.flutterSdkPath": ".fvm/flutter_sdk",
+    // Remove .fvm files from search
+    ///* Essa configuração exclui o diretório .fvm dos resultados de pesquisa no VS Code. Isso significa que os arquivos e pastas dentro do diretório .fvm não serão incluídos nos resultados de pesquisa ao usar a função de pesquisa do VS Code.*/
+    "search.exclude": {
+        "**/.fvm": true
+    },
+    ///*Essa configuração exclui o diretório .fvm da lista de diretórios observados pelo VS Code para alterações de arquivos. Isso significa que o VS Code não irá monitorar os arquivos e pastas dentro do diretório .fvm para atualizações automáticas ou recarregamento durante o desenvolvimento.*/
+    // Remove from file watching
+    "files.watcherExclude": {
+        "**/.fvm": true
+    }
+}

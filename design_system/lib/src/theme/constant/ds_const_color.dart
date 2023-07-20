@@ -2,7 +2,8 @@
 
 import 'package:flutter/material.dart';
 
-/// Temos essa classe de DSConstColor como forma de facilitar o manuseio das cores no desenvolvimento do projeto.
+/// Temos essa classe de DSConstColor como forma de facilitar o manuseio
+/// das cores no desenvolvimento do projeto.
 class DSConstColor {
   static const Color primaryLight = Color(0xFFE85C73);
   static const Color primary = Color(0xFFDC0A2D);

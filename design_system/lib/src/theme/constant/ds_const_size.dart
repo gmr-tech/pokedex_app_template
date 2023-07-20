@@ -1,8 +1,8 @@
 // ignore_for_file: public_member_api_docs
 
-
-/// Classe construída como forma de facilitar a utilização de tamanhos padrão para os componentes do app,
-/// como: icones, espessura dos divisores, espessura da borda etc.  
+/// Classe construída como forma de facilitar a utilização de tamanhos padrão
+/// para os componentes do app, como: icones, espessura dos divisores, espessura
+/// da borda etc.
 class DSConstSize {
   static const double iconSizeSmall = 16;
   static const double iconSize = 24;

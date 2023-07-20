@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs
 
-/// Classe construída como forma de facilitar a utilização do espaçamento padrão definido para autilização do design do app.
+/// Classe construída como forma de facilitar a utilização do espaçamento padrão
+/// definido para autilização do design do app.
 class DSConstSpace {
   static const double xxxSmall = 1;
   static const double xxSmall = 2;

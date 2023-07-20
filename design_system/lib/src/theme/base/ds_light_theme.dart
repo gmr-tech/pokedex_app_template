@@ -32,8 +32,10 @@ final ThemeData _lightThemeData = ThemeData.light().copyWith(
   useMaterial3: true,
   colorScheme: _lightColorScheme,
   scaffoldBackgroundColor: _lightColorScheme.background,
-   ///O bloco `appBarTheme` define a aparência do AppBar (barra de aplicativo) do tema claro, 
-/// incluindo as cores de fundo, cores do texto e estilos dos ícones.
+
+  /// O bloco `appBarTheme` define a aparência do AppBar (barra de aplicativo)
+  /// do tema claro, incluindo as cores de fundo, cores do texto e estilos
+  /// dos ícones.
   appBarTheme: AppBarTheme(
     backgroundColor: _lightColorScheme.primaryContainer,
     foregroundColor: _lightColorScheme.onPrimary,
@@ -50,7 +52,9 @@ final ThemeData _lightThemeData = ThemeData.light().copyWith(
       color: _lightColorScheme.onPrimary,
     ),
   ),
-   ///O bloco `textTheme` define os estilos de texto para diferentes elementos do tema escuro, como títulos e corpo do texto. 
+
+  /// O bloco `textTheme` define os estilos de texto para diferentes elementos
+  /// do tema escuro, como títulos e corpo do texto.
   textTheme: DSBaseTypography.textTheme.copyWith(
     titleLarge: DSBaseTypography.textTheme.titleLarge!.copyWith(
       color: _lightColorScheme.onSurface,
@@ -80,7 +84,11 @@ final ThemeData _lightThemeData = ThemeData.light().copyWith(
       color: _lightColorScheme.onSurface,
     ),
   ),
-   /// O bloco `elevatedButtonTheme` define o estilo dos botões elevados (ElevatedButton) para o tema claro. Ele especifica a cor de fundo e a cor do texto com base no estado do botão (por exemplo, desabilitado, pressionado). 
+
+  /// O bloco `elevatedButtonTheme` define o estilo dos botões elevados
+  /// (ElevatedButton) para o tema claro. Ele especifica a cor de fundo
+  /// e a cor do texto com base no estado do botão (por exemplo, desabilitado,
+  /// pressionado).
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: _baseButtonStyle.copyWith(
       backgroundColor: MaterialStateProperty.resolveWith(
@@ -110,4 +118,7 @@ final ThemeData _lightThemeData = ThemeData.light().copyWith(
   extensions: <ThemeExtension<dynamic>>[DSCustomTheme.light],
 );
 
-///esse arquivo define um esquema de cores e um conjunto de dados de tema claro personalizados, incluindo cores, estilos de texto e estilos de botões. Ele faz parte de um arquivo de definição de tema mais amplo (ds_theme.dart) usado para personalizar a aparência da aplicação em um tema claro.
+///esse arquivo define um esquema de cores e um conjunto de dados de tema claro
+///personalizados, incluindo cores, estilos de texto e estilos de botões. Ele
+///faz parte de um arquivo de definição de tema mais amplo (ds_theme.dart) usado
+///para personalizar a aparência da aplicação em um tema claro.

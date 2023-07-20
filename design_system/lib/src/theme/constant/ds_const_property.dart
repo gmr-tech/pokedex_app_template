@@ -2,8 +2,9 @@
 
 import 'package:flutter/material.dart';
 
-/// Temos a classe DSConstProperty como forma de registrar valores literais e facilitar a utilização de valores
-/// que se serão utilizados no desenvolvimento do design do app.
+/// Temos a classe DSConstProperty como forma de registrar valores literais e
+/// facilitar a utilização de valores que se serão utilizados no desenvolvimento
+/// do design do app.
 class DSConstProperty {
   static const double squareAspectRatio = 1;
   static const double standardAspectRatio = 4 / 3;

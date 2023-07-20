@@ -47,4 +47,8 @@ class DSBoxSpace extends SizedBox {
   DSBoxSpace.custom({required DSBoxSpaceSize size, super.key})
       : super.square(dimension: size.kSize);
 }
-///a classe DSBoxSpace facilita a criação de SizedBox com dimensões pré-definidas, evitando a necessidade de escrever manualmente o SizedBox com os valores de altura e largura em cada caso. Ela fornece construtores para tamanhos específicos e também permite a criação de caixas com dimensões personalizadas usando a enumeração DSBoxSpaceSize.
+/// a classe DSBoxSpace facilita a criação de SizedBox com dimensões 
+/// pré-definidas, evitando a necessidade de escrever manualmente o 
+/// SizedBox com os valores de altura e largura em cada caso. Ela fornece 
+/// construtores para tamanhos específicos e também permite a criação de 
+/// caixas com dimensões personalizadas usando a enumeração DSBoxSpaceSize.

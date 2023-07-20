@@ -11,7 +11,6 @@
 
 part of 'ds_theme.dart';
 
-
 final ColorScheme _darkColorScheme = const ColorScheme.dark().copyWith(
   primary: DSConstColor.primary,
   primaryContainer: DSConstColor.primaryDark,
@@ -33,8 +32,10 @@ final ThemeData _darkThemeData = ThemeData.dark().copyWith(
   useMaterial3: true,
   colorScheme: _darkColorScheme,
   scaffoldBackgroundColor: _darkColorScheme.background,
-  ///O bloco `appBarTheme` define a aparência do AppBar (barra de aplicativo) do tema escuro, 
-/// incluindo as cores de fundo, cores do texto e estilos dos ícones.
+
+  ///O bloco `appBarTheme` define a aparência do AppBar (barra de aplicativo)
+  ///do tema escuro, incluindo as cores de fundo, cores do texto
+  ///e estilos dos ícones.
   appBarTheme: AppBarTheme(
     backgroundColor: _darkColorScheme.primaryContainer,
     foregroundColor: _darkColorScheme.onSurface,
@@ -51,7 +52,9 @@ final ThemeData _darkThemeData = ThemeData.dark().copyWith(
       color: _darkColorScheme.onPrimary,
     ),
   ),
-  ///O bloco `textTheme` define os estilos de texto para diferentes elementos do tema escuro, como títulos e corpo do texto. 
+
+  ///O bloco `textTheme` define os estilos de texto para diferentes elementos do
+  ///tema escuro, como títulos e corpo do texto.
   textTheme: DSBaseTypography.textTheme.copyWith(
     titleLarge: DSBaseTypography.textTheme.titleLarge!.copyWith(
       color: _darkColorScheme.onSurface,
@@ -81,7 +84,11 @@ final ThemeData _darkThemeData = ThemeData.dark().copyWith(
       color: _darkColorScheme.onSurface,
     ),
   ),
-  /// O bloco `elevatedButtonTheme` define o estilo dos botões elevados (ElevatedButton) para o tema escuro. Ele especifica a cor de fundo e a cor do texto com base no estado do botão (por exemplo, desabilitado, pressionado).
+
+  ///O bloco `elevatedButtonTheme` define o estilo dos botões elevados
+  ///(ElevatedButton) para o tema escuro. Ele especifica a cor de fundo
+  ///e a cor do texto com base no estado do botão (por exemplo, desabilitado,
+  ///pressionado).
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: _baseButtonStyle.copyWith(
       backgroundColor: MaterialStateProperty.resolveWith(
@@ -111,4 +118,7 @@ final ThemeData _darkThemeData = ThemeData.dark().copyWith(
   extensions: <ThemeExtension<dynamic>>[DSCustomTheme.dark],
 );
 
-///esse arquivo define um esquema de cores e um conjunto de dados de tema escuro personalizados, incluindo cores, estilos de texto e estilos de botões. Ele faz parte de um arquivo de definição de tema mais amplo (ds_theme.dart) usado para personalizar a aparência da aplicação em um tema escuro.
+///esse arquivo define um esquema de cores e um conjunto de dados de tema escuro
+/// personalizados, incluindo cores, estilos de texto e estilos de botões. Ele
+/// faz parte de um arquivo de definição de tema mais amplo (ds_theme.dart)
+/// usado para personalizar a aparência da aplicação em um tema escuro.

@@ -28,3 +28,6 @@ migrate_working_dir/
 .dart_tool/
 .packages
 build/
+
+# Ignore design_system android local.properties
+design_system/android/local.properties

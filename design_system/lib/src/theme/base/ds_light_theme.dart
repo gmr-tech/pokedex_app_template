@@ -9,6 +9,11 @@
 // Dynamic is required for Extensions
 // ignore_for_file: avoid-dynamic
 
+///Esse arquivo define um esquema de cores e um conjunto de dados de tema claro
+///personalizados, incluindo cores, estilos de texto e estilos de botões. Ele
+///faz parte de um arquivo de definição de tema mais amplo (ds_theme.dart) usado
+///para personalizar a aparência da aplicação em um tema claro.
+
 part of 'ds_theme.dart';
 
 final ColorScheme _lightColorScheme = const ColorScheme.light().copyWith(
@@ -117,8 +122,3 @@ final ThemeData _lightThemeData = ThemeData.light().copyWith(
   ),
   extensions: <ThemeExtension<dynamic>>[DSCustomTheme.light],
 );
-
-///esse arquivo define um esquema de cores e um conjunto de dados de tema claro
-///personalizados, incluindo cores, estilos de texto e estilos de botões. Ele
-///faz parte de um arquivo de definição de tema mais amplo (ds_theme.dart) usado
-///para personalizar a aparência da aplicação em um tema claro.

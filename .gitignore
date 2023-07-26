@@ -46,3 +46,5 @@ app.*.map.json
 # FVM
 .fvm/flutter_sdk
 
+# Ignore design_system android local.properties
+design_system/android/local.properties

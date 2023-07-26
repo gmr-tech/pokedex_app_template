@@ -30,4 +30,4 @@ migrate_working_dir/
 build/
 
 # Ignore design_system android local.properties
-design_system/android/local.properties
+android/local.properties

@@ -1,8 +1,5 @@
 // ignore_for_file: public_member_api_docs
 
-class AppAssets {
-  static const String designSystemPackage = 'design_system';
-}
 ///Essa classe e a constante podem ser úteis para armazenar 
 ///informações sobre ativos ou recursos utilizados no aplicativo.
 ///Aqui estão algumas possíveis utilizações:
@@ -20,3 +17,8 @@ class AppAssets {
 ///completo ou URL. Por exemplo, se houver um arquivo de imagem chamado logo.png
 ///no pacote "design_system", você pode usar AppAssets.designSystemPackage + 
 ///'/logo.png' para obter o caminho completo.
+library;
+
+class AppAssets {
+  static const String designSystemPackage = 'design_system';
+}

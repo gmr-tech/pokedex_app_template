@@ -1,10 +1,10 @@
 /// Esse arquivo representa o arquivo principal do pacote "design_system"
 /// 
-///As declarações `export` são usadas para exportar definições
-///(classes, constantes, funções etc.) do pacote para outros
-///pacotes ou arquivos.
-///Cada linha de exportação representa a exportação de um arquivo 
-///específico dentro do pacote "design_system". 
+/// As declarações `export` são usadas para exportar definições
+/// (classes, constantes, funções etc.) do pacote para outros
+/// pacotes ou arquivos.
+/// Cada linha de exportação representa a exportação de um arquivo 
+/// específico dentro do pacote "design_system". 
 ///
 library design_system;
 

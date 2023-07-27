@@ -23,34 +23,34 @@ part 'ds_box_space_size.dart';
 /// {@endtemplate}
 ///
 class DSBoxSpace extends SizedBox {
-  ///{@macro DSBoxSpace}
+  /// {@macro DSBoxSpace}
   const DSBoxSpace({super.key}) : super.square(dimension: DSConstSpace.medium);
 
-  ///{@macro DSBoxSpace}
+  /// {@macro DSBoxSpace}
   const DSBoxSpace.xxSmall({super.key})
       : super.square(dimension: DSConstSpace.xxSmall);
 
-  ///{@macro DSBoxSpace}
+  /// {@macro DSBoxSpace}
   const DSBoxSpace.xSmall({super.key})
       : super.square(dimension: DSConstSpace.xSmall);
 
-  ///{@macro DSBoxSpace}
+  /// {@macro DSBoxSpace}
   const DSBoxSpace.small({super.key})
       : super.square(dimension: DSConstSpace.small);
 
-  ///{@macro DSBoxSpace}
+  /// {@macro DSBoxSpace}
   const DSBoxSpace.large({super.key})
       : super.square(dimension: DSConstSpace.large);
 
-  ///{@macro DSBoxSpace}
+  /// {@macro DSBoxSpace}
   const DSBoxSpace.xLarge({super.key})
       : super.square(dimension: DSConstSpace.xLarge);
 
-  ///{@macro DSBoxSpace}
+  /// {@macro DSBoxSpace}
   const DSBoxSpace.xxLarge({super.key})
       : super.square(dimension: DSConstSpace.xxLarge);
 
-  ///{@macro DSBoxSpace}
+  /// {@macro DSBoxSpace}
   DSBoxSpace.custom({required DSBoxSpaceSize size, super.key})
       : super.square(dimension: size.kSize);
 }

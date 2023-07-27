@@ -10,13 +10,18 @@ import 'package:provider/provider.dart';
 /// from anywhere in the app.
 ///
 /// {@endtemplate}
+/// 
+/// O [ThemeSwitcherButton] utiliza-se do `Consumer` que é um widget construtor 
+/// proveniente do pacote provider, que permite acessar o valor do 
+/// `DSThemeController` para que possa reconstruir automaticamente o widget 
+/// sempre que esse valor mudar.
+/// 
 class ThemeSwitcherButton extends StatelessWidget {
   /// {@macro ThemeSwitcherButton}
   const ThemeSwitcherButton({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // / O `Consumer` é um widget que permite acessar o valor do DSThemeController e reconstruir automaticamente o widget sempre que esse valor mudar.
     return Consumer<DSThemeController>(
       builder: (
         context,

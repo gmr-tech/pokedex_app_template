@@ -12,6 +12,7 @@ part of 'ds_custom_theme.dart';
 ///Portanto, a anotação @TailorComponent(themes: ['light', 'dark']) indica que a
 ///classe DSColor é um componente personalizável do tema e que existem dois
 ///temas disponíveis para personalização: "light" e "dark".
+///
 @TailorComponent(themes: ['light', 'dark'])
 class _$DSColor {
   static List<Color> example = [

@@ -9,13 +9,9 @@
 // Dynamic is required for Extensions
 // ignore_for_file: avoid-dynamic
 
-///Esse arquivo define um esquema de cores e um conjunto de dados de tema claro
-///personalizados, incluindo cores, estilos de texto e estilos de botões. Ele
-///faz parte de um arquivo de definição de tema mais amplo (ds_theme.dart) usado
-///para personalizar a aparência da aplicação em um tema claro.
-
 part of 'ds_theme.dart';
 
+///Esse arquivo define um esquema de cores voltado para tema light da aplicação.
 final ColorScheme _lightColorScheme = const ColorScheme.light().copyWith(
   primary: DSConstColor.primary,
   primaryContainer: DSConstColor.primary,
@@ -32,15 +28,33 @@ final ColorScheme _lightColorScheme = const ColorScheme.light().copyWith(
   brightness: Brightness.light,
 );
 
+///Essa propriedade `lightThemeData` tem como objetivo principal
+///declarar um conjunto de dados do tema claro
+///personalizados, incluindo cores, estilos de texto e estilos de botões. Ele
+///faz parte de um arquivo de definição de tema mais amplo (ds_theme.dart)
+///usado para personalizar a aparência da aplicação em um tema claro.
+///
+///Os atributos que foram configurados por meio do método `copyWith()`, 
+///do `ThemeData.light()`, foram:
+///
+///* `appBarTheme`: o bloco `appBarTheme` define a aparência do AppBar 
+///(barra de aplicativo) do tema claro, incluindo as cores de fundo, 
+///cores do texto e estilos dos ícones.
+///
+///* `textTheme`: o bloco `textTheme` define os estilos de texto para 
+/// diferentes elementos do tema escuro, como títulos e corpo do texto.
+///
+///* `elevatedButtonTheme`: o bloco `elevatedButtonTheme` define o estilo 
+///dos botões elevados (ElevatedButton) para o tema claro. Ele especifica 
+///a cor de fundo e a cor do texto com base no estado do botão (por exemplo:
+///desabilitado e pressionado).
+///
 final ThemeData _lightThemeData = ThemeData.light().copyWith(
   primaryColor: _lightColorScheme.primary,
   useMaterial3: true,
   colorScheme: _lightColorScheme,
   scaffoldBackgroundColor: _lightColorScheme.background,
 
-  /// O bloco `appBarTheme` define a aparência do AppBar (barra de aplicativo)
-  /// do tema claro, incluindo as cores de fundo, cores do texto e estilos
-  /// dos ícones.
   appBarTheme: AppBarTheme(
     backgroundColor: _lightColorScheme.primaryContainer,
     foregroundColor: _lightColorScheme.onPrimary,
@@ -58,8 +72,6 @@ final ThemeData _lightThemeData = ThemeData.light().copyWith(
     ),
   ),
 
-  /// O bloco `textTheme` define os estilos de texto para diferentes elementos
-  /// do tema escuro, como títulos e corpo do texto.
   textTheme: DSBaseTypography.textTheme.copyWith(
     titleLarge: DSBaseTypography.textTheme.titleLarge!.copyWith(
       color: _lightColorScheme.onSurface,
@@ -90,10 +102,6 @@ final ThemeData _lightThemeData = ThemeData.light().copyWith(
     ),
   ),
 
-  /// O bloco `elevatedButtonTheme` define o estilo dos botões elevados
-  /// (ElevatedButton) para o tema claro. Ele especifica a cor de fundo
-  /// e a cor do texto com base no estado do botão (por exemplo, desabilitado,
-  /// pressionado).
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: _baseButtonStyle.copyWith(
       backgroundColor: MaterialStateProperty.resolveWith(

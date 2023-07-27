@@ -7,6 +7,7 @@ part of 'ds_theme.dart';
 ///
 /// Contains the default `shape`, `textStyle`, `minimumSize`, `tapTargetSize`
 /// and `padding`.
+/// 
 final _baseButtonStyle = ButtonStyle(
   elevation: const MaterialStatePropertyAll(0),
   shape: MaterialStateProperty.all(

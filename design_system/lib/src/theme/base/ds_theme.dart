@@ -14,6 +14,7 @@ part 'ds_theme_properties.dart';
 
 ///Esses métodos retornam os dados de tema correspondentes aos temas claro e
 ///escuro, respectivamente.
+///
 class DSTheme {
   static ThemeData get lightThemeData => _lightThemeData;
   static ThemeData get darkThemeData => _darkThemeData;

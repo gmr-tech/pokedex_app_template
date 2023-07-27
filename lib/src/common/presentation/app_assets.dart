@@ -17,7 +17,6 @@
 ///completo ou URL. Por exemplo, se houver um arquivo de imagem chamado logo.png
 ///no pacote "design_system", você pode usar AppAssets.designSystemPackage + 
 ///'/logo.png' para obter o caminho completo.
-library;
 
 class AppAssets {
   static const String designSystemPackage = 'design_system';

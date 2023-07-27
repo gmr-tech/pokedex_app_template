@@ -4,6 +4,12 @@ import '../../theme/constant/ds_const_space.dart';
 
 part 'ds_box_space_size.dart';
 
+/// A classe DSBoxSpace facilita a criação de SizedBox com dimensões
+/// pré-definidas, evitando a necessidade de escrever manualmente o
+/// SizedBox com os valores de altura e largura em cada caso. Ela fornece
+/// construtores para tamanhos específicos e também permite a criação de
+/// caixas com dimensões personalizadas usando a enumeração DSBoxSpaceSize.
+///
 /// {@template DSBoxSpace}
 /// A class to simpligy the usage of:
 /// ```dart
@@ -15,6 +21,7 @@ part 'ds_box_space_size.dart';
 /// ````
 /// Only values from [DSBoxSpaceSize] are available for dimension.
 /// {@endtemplate}
+///
 class DSBoxSpace extends SizedBox {
   ///{@macro DSBoxSpace}
   const DSBoxSpace({super.key}) : super.square(dimension: DSConstSpace.medium);
@@ -47,8 +54,3 @@ class DSBoxSpace extends SizedBox {
   DSBoxSpace.custom({required DSBoxSpaceSize size, super.key})
       : super.square(dimension: size.kSize);
 }
-/// a classe DSBoxSpace facilita a criação de SizedBox com dimensões 
-/// pré-definidas, evitando a necessidade de escrever manualmente o 
-/// SizedBox com os valores de altura e largura em cada caso. Ela fornece 
-/// construtores para tamanhos específicos e também permite a criação de 
-/// caixas com dimensões personalizadas usando a enumeração DSBoxSpaceSize.

@@ -14,22 +14,15 @@ part 'ds_color.dart';
 part 'ds_custom_theme.tailor.dart';
 part 'ds_typography.dart';
 
-/// O arquivo `ds_custom_theme.dart` tem a função de definir e encapsular
-/// as configurações e elementos de personalização do tema em uma 
-/// classe centralizada (DSCustomTheme), permitindo que o tema 
-/// seja facilmente acessado e aplicado no aplicativo inteiro.
-///  
-/// Observação: **_O arquivo inclui diretivas ` part ` para indicar que o 
-/// código é dividido em partes e essas partes estão 
-/// incluídas em outros arquivos._**
+/// A anotação `@tailor` é utilizada para que possamos sinalizar que essa é uma
+/// classe que contém extensões adicionais ao tema da aplicação.
 /// 
-/// A classe `_$DSCustomTheme` é a classe responsável por agrupar e fornecer 
-/// acesso aos elementos de personalização do tema, como cores e estilos 
-/// de tipografia, que foram definidas nos arquivo 
-/// `ds_color.dart` e `ds_typography.dart`. Onde dentro dela temos duas 
-/// propriedades que extendem **ThemeExtension**, indicando que é uma 
-/// extensão do tema padrão do Flutter. Isso permite adicionar propriedades
-/// e comportamentos personalizados ao tema.
+/// A classe `_$DSCustomTheme` ela utiliza a anotação `@themeExtension` como 
+/// forma de extender as duas listas que foram criadas, tanto no arquivo 
+/// `ds_color.dart` para definir as cores base da aplicação, quanto o arquivo
+/// `ds_typography.dart` para definir as cores base da tipografia. Ou seja, a
+/// sua função é agrupar as informações de tema que já foram criadas nas 
+/// classes: `_$DSColor` e `_$DSTypography`.  
 /// 
 @tailor
 class _$DSCustomTheme {
@@ -39,3 +32,4 @@ class _$DSCustomTheme {
   @themeExtension
   static List<DSTypography> dsTypography = DSTypography.themes;
 }
+

@@ -4,15 +4,20 @@
 
 part of 'ds_custom_theme.dart';
 
-/// A anotação @TailorComponent é específica para o projeto e é definida pelo
-/// pacote theme_tailor usado no projeto para facilitar a personalização e
-/// ajuste do tema. O pacote theme_tailor utiliza essa anotação para 
-/// identificar os componentes que podem ser personalizados e gerar o código 
-/// correspondente para cada tema.
-/// Portanto, a anotação @TailorComponent(themes: ['light', 'dark']) indica 
-/// que a classe DSColor é um componente personalizável do tema e que existem
-/// dois temas disponíveis para personalização: "light" e "dark".
-///
+/// A anotação `@TailorComponent` é usada porque devemos especificar a 
+/// quantidade de temas do aplicativo e nomeá-los da forma como acharmos 
+/// necessário, para que possam ser gerados. Neste caso estão nomeados como 
+/// `light` e `dark` dentro da propriedade *themes* da anotação.
+/// 
+/// A class `_$DSColor` é gerada para que possamos definir as cores base 
+/// para cada tema definido, que nesse caso temos duas cores:
+/// 
+/// * DSConstColors.dark: uma cor definida como base de exemplo para o 
+/// tema dark;
+/// 
+/// * DSConstColor.light: uma cor definida como base de exemplo para o 
+/// tema light;  
+/// 
 @TailorComponent(themes: ['light', 'dark'])
 class _$DSColor {
   static List<Color> example = [

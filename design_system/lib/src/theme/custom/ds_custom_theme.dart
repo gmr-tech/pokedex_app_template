@@ -16,14 +16,14 @@ part 'ds_typography.dart';
 
 /// A anotação `@tailor` é utilizada para que possamos sinalizar que essa é uma
 /// classe que contém extensões adicionais ao tema da aplicação.
-/// 
-/// A classe `_$DSCustomTheme` ela utiliza a anotação `@themeExtension` como 
-/// forma de extender as duas listas que foram criadas, tanto no arquivo 
+///
+/// A classe `_$DSCustomTheme` ela utiliza a anotação `@themeExtension` como
+/// forma de extender as duas listas que foram criadas, tanto no arquivo
 /// `ds_color.dart` para definir as cores base da aplicação, quanto o arquivo
 /// `ds_typography.dart` para definir as cores base da tipografia. Ou seja, a
-/// sua função é agrupar as informações de tema que já foram criadas nas 
-/// classes: `_$DSColor` e `_$DSTypography`.  
-/// 
+/// sua função é agrupar as informações de tema que já foram criadas nas
+/// classes: `_$DSColor` e `_$DSTypography`.
+///
 @tailor
 class _$DSCustomTheme {
   @themeExtension
@@ -32,4 +32,3 @@ class _$DSCustomTheme {
   @themeExtension
   static List<DSTypography> dsTypography = DSTypography.themes;
 }
-

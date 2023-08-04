@@ -81,15 +81,14 @@ extension SortTypeX on SortingOrder {
 
   /// `isByIDHighLow`: getter que foi criado como forma de comparar a atual
   /// enumeração que está sendo usada na aplicação. Caso a atual for exatamente
-  /// igual (mesmo valor e mesmo tipo) a `SortingOrder.isByIDHighLow()`,
+  /// igual (mesmo valor e mesmo tipo) a `SortingOrder.issByIDHighLow()`,
   /// o resultado será **true**, caso contrário, se o objeto `SortingOrder
   /// atual for diferente de `SortingOrder.isByIDHighLow()`, o getter
   /// retornará false.
   bool get isByIDHighLow => this == const SortingOrder.byIDHighLow();
 
-  /// O getter `display` tem como função, por meio da sua lógica implementada,
-  /// realizar a mudança dessas ordenações na tela utilizando uma estrutura
-  /// condicional if/else.
+  /// A função do getter display é retornar uma `String` que condiz com
+  /// o tipo de ordenação representada.
   String? get display {
     if (isByNameAZ) {
       return DisplayStrings.sortAZ;

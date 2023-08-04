@@ -25,7 +25,7 @@ enum PokemonType {
   steel('steel', DSConstColor.pokSteel),
   water('water', DSConstColor.pokWater);
 
-  /// Aqui temos um construtor constante da classe, ou seja, após ter sido
+  /// Aqui temos um construtor constante, ou seja, após ter sido
   /// atribuído um valor a ela em tempo de compilação, o valor dela não pode
   /// ser mais alterado, sendo assim constante.
   const PokemonType(this.value, this.color);

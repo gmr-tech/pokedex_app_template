@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 /// são imutáveis. Ou seja, depois que um objeto `PokemonBaseStats` é criado,
 /// seus valores não podem ser alterados.
 ///
-/// A classe `PokemonBaseStats` é criada como forma de determimar as
+/// A classe `PokemonBaseStats` é criada para determimar as
 /// estatísticas do pokémon, levando em consideração dados como:
 ///
 /// 1. `hp`: representa o valor de pontos de vida do pokémon (hit points);
@@ -39,7 +39,7 @@ class PokemonBaseStats {
   final int specialDefense;
   final int speed;
 
-  /// O método `mapValues()` é criado como forma de fazer com que seja
+  /// O método `mapValues()` é criado para fazer com que seja
   /// mais fácil acessar os dados fornecidos por essa clase, já que o
   /// método retorna um map com chave e valor, sendo cada chave,
   /// uma entrada para cada propriedade diferente.
@@ -54,14 +54,9 @@ class PokemonBaseStats {
     };
   }
 
-  /// Temos o método `copyWith` como forma de fazer com que tenhamos a
+  /// Temos o método `copyWith` para fazer com que tenhamos a
   /// possibillidade de gerar uma cópia de todos os dados e
   /// alterar o valor somente da propriedade que desejamos.
-  ///
-  /// O método utiliza o operador de coalescência nula `??` como
-  /// forma de fazer com que, caso ao inicializar o método e determinada
-  /// propriedade, por exemplo, `attack`, seja nulo, a propriedade ainda manterá
-  /// o valor atual da propriedade original.
   PokemonBaseStats copyWith({
     int? hp,
     int? attack,
@@ -96,8 +91,8 @@ class PokemonBaseStats {
   /// iguais e com isso o método recebe o valor de true.
   ///
   /// A função `identical(this, other)` é usada para verificar se duas
-  /// referências de objetos em Dart apontam para exatamente a mesma instância
-  /// na memória. Em outras palavras, `identical(this, other)` retorna **true**
+  /// referências de objetos apontam para exatamente a mesma instância
+  /// na memória. Sendo assim, `identical(this, other)` retorna **true**
   /// se **this e other** são a mesma instância (ou seja, o mesmo objeto) na
   /// memória e retorna false caso contrário.
   @override

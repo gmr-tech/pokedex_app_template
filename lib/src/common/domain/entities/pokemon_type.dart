@@ -30,7 +30,7 @@ enum PokemonType {
   /// ser mais alterado, sendo assim constante.
   const PokemonType(this.value, this.color);
 
-  /// Aqui temos os atributos da classe `PokemonType`,
+  /// Aqui temos os atributos do construtor do enum `PokemonType`,
   final String value;
   final Color color;
 

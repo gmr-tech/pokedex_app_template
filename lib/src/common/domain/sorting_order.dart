@@ -7,42 +7,33 @@ import '../../utils/display_strings.dart';
 part 'sorting_order.freezed.dart';
 
 /// A anotação @freezed indica que a classe `SortingOrder` será processada pelo
-/// package freezed e assim gerar o arquivo com códigos adicionais.
+/// package freezed, para que assim possa ser gerado o arquivo com códigos
+/// adicionais.
 ///
 /// A classe `SortingOrder` é usada para representar diferentes tipos de
 /// ordenação.
 ///
-/// A classe `SortingOrder` tem a palavra reservada `with` como forma
-/// de utilizar o mixin, ou seja, misturar o contéudo que será gerado
-/// pelo freezed no arquivo
-/// <u>sorting_order.freezed.dart</u>
-///
-///  Logo a baixo temos os contrutores que utilizam as palavras reservadas
-/// `const` e `factory` como forma de criar os construtores de fábrica
-/// (**factory**)e também imutáveis (**const**) para receber as classes
-/// abstratas a partir do código gerado no arquivo:
-/// <u>sorting_order.freezed.dart</u>
-///
-/// Esses construtores de fábrica são usados para criar instâncias da classe
-/// `SortingOrder`. Como eles são constantes, as instâncias criadas não podem
-/// ser alteradas depois de criadas, garantindo que sejam imutáveis, sendo
-/// que eles atuam como se fossem enumerações também.
+/// Utilizamos a palavra reservada `factory` para que nos construtores
+/// nomeados tenha que retornar de maneira obrigatória uma nova
+/// instância, no caso uma instância da classe _$SortingOrder. Adicionamos a
+/// palavra const aos constantes, para que as instâncias criadas
+/// não possam ser alteradas depois de criadas, garantindo que sejam imutáveis.
 @freezed
 class SortingOrder with _$SortingOrder {
-  /// * Construtor de fábrica que representa uma ordenação do nome do pokémon
-  /// de A à Z;
+  /// * Construtor nomeado da classe, criado para representar uma ordenação por
+  /// nome do pokémon de A à Z;
   const factory SortingOrder.byNameAZ() = _ByNameAZ;
 
-  /// * Construtor de fábrica que representa uma ordenação do nome do pokémon
-  ///  de Z à A;
+  /// * Construtor nomeado da classe, criado para representar a ordenação por
+  ///  nome do pokémon de Z à A;
   const factory SortingOrder.byNameZA() = _ByNameZA;
 
-  /// * Construtor de fábrica que representa a ordenação por ID
-  /// em ordem crescente.
+  /// * Construtor nomeado da classe, criado para representar a ordenação por
+  /// ID em ordem crescente.
   const factory SortingOrder.byIDLowHigh() = _ByIDLowHigh;
 
-  /// * Construtor de fábrica que representa a ordenação por ID
-  /// em ordem crescente.
+  /// * Construtor nomeado da classe, criado para representar a ordenação por
+  /// ID em ordem crescente.
   const factory SortingOrder.byIDHighLow() = _ByIDHighLow;
 }
 
@@ -50,45 +41,35 @@ class SortingOrder with _$SortingOrder {
 /// para a classe `SortingOrder` é usada para adicionar novos
 /// métodos ou propriedades a classe sem modificar sua
 /// implementação original.
-///
-/// Nesta extensão, são definidos quatro getters que
-/// retornam um valor booleano, caso o objeto SortingOrder seja igual
-/// ao respectivo membro da enumeração receberá **true*. Por exemplo, o getter
-/// `isByNameAZ` retorna **true** se o `SortingOrder` for igual a
-/// `SortingOrder.byNameAZ()`.
 extension SortTypeX on SortingOrder {
-  /// `isByNameAZ`: getter que foi criado como forma de comparar a atual
-  /// enumeração que está sendo usada na aplicação. Caso a atual for exatamente
-  /// igual (mesmo valor e mesmo tipo) a `SortingOrder.byNameAZ()`, o resultado
-  /// será **true**, caso contrário, se o objeto `SortingOrder` atual for
-  /// diferente de `SortingOrder.byNameAZ()`, o getter retornará false.
+  /// `isByNameAZ`: O getter isByNameAZ foi criado para retornar um valor
+  /// booleano. Se o valor retornado for diferente do objeto
+  /// `SortingOrder.byNameAZ`, o valor será false. Caso contrário, se o valor
+  /// retornado for igual ao objeto SortingOrder.byNameAZ, o valor será true.
   bool get isByNameAZ => this == const SortingOrder.byNameAZ();
 
-  /// `isByNameZA`: getter que foi criado como forma de comparar a atual
-  /// enumeração que está sendo usada na aplicação. Caso a atual for exatamente
-  /// igual (mesmo valor e mesmo tipo) a `SortingOrder.byNameZA()`, o resultado
-  /// será **true**, caso contrário, se o objeto `SortingOrder` atual for
-  /// diferente de `SortingOrder.byNameZA()`, o getter retornará false.
+  /// isByNameZA: O getter isByNameZA foi criado para retornar um valor
+  /// booleano. Se o valor retornado for diferente do objeto
+  /// `SortingOrder.byNameZA`, o valor será false. Caso contrário, se o valor
+  /// retornado for igual ao objeto SortingOrder.byNameZA, o valor será true.
   bool get isByNameZA => this == const SortingOrder.byNameZA();
 
-  /// `isByIDLowHigh`: getter que foi criado como forma de comparar a atual
-  /// enumeração que está sendo usada na aplicação. Caso a atual for exatamente
-  /// igual (mesmo valor e mesmo tipo) a `SortingOrder.isByIDLowHigh()`,
-  /// o resultado será **true**, caso contrário, se o objeto `SortingOrder`
-  /// atual for diferente de `SortingOrder.byNameZA()`, o getter
-  /// retornará false.
+  /// isByIDLowHigh: O getter isByIDLowHigh foi criado para retornar um valor
+  /// booleano. Se o valor retornado for diferente do objeto
+  /// `SortingOrder.byIDLowHigh`, o valor será false. Caso contrário, se o valor
+  /// retornado for igual ao objeto SortingOrder.byIDLowHigh, o valor será true.
   bool get isByIDLowHigh => this == const SortingOrder.byIDLowHigh();
 
-  /// `isByIDHighLow`: getter que foi criado como forma de comparar a atual
-  /// enumeração que está sendo usada na aplicação. Caso a atual for exatamente
-  /// igual (mesmo valor e mesmo tipo) a `SortingOrder.issByIDHighLow()`,
-  /// o resultado será **true**, caso contrário, se o objeto `SortingOrder
-  /// atual for diferente de `SortingOrder.isByIDHighLow()`, o getter
-  /// retornará false.
+  /// isByIDHighLow: O getter isByIDHighLow foi criado para retornar um valor
+  /// booleano. Se o valor retornado for diferente do objeto
+  /// `SortingOrder.byIDHighlow`, o valor será false. Caso contrário, se o valor
+  /// retornado for igual ao objeto SortingOrder.byIDHighlow, o valor será true.
   bool get isByIDHighLow => this == const SortingOrder.byIDHighLow();
 
-  /// A função do getter display é retornar uma `String` que condiz com
-  /// o tipo de ordenação representada.
+  /// O getter `display` foi criada para que possa ser retornada uma String de
+  /// acordo com qual ordenação que está sendo representada. Como por exemplo,
+  /// caso esteja sendo utilizado a ordenação alfábetica de A à Z, será
+  /// retornado a String 'Name (A-Z)'.
   String? get display {
     if (isByNameAZ) {
       return DisplayStrings.sortAZ;

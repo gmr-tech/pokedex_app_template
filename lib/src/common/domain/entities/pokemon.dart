@@ -29,14 +29,9 @@ class Pokemon extends PokemonIdentifier {
   final PokemonAboutProperties aboutProperties;
   final PokemonBaseStats baseStats;
 
-  /// Temos o método `copyWith()` como forma de fazer com que tenhamos a
+  /// Temos o método `copyWith()` para fazer com que tenhamos a
   /// possibillidade de gerar uma cópia de todos os dados e
   /// alterar o valor somente da propriedade que desejamos.
-  ///
-  /// O método possui a utilizaçåo do operador de coalescência nula `??` como
-  /// forma de fazer com que, caso ao inicializar o método e determinada
-  /// propriedade, por exemplo, `types`, seja nula, a propriedade ainda manterá
-  /// o valor atual da propriedade original.
   @override
   Pokemon copyWith({
     int? id,
@@ -58,11 +53,11 @@ class Pokemon extends PokemonIdentifier {
     );
   }
 
-  /// O mátodo operador de igualdade (==) é responsável por comparar dois
+  /// O método operador de igualdade (==) é responsável por comparar dois
   /// objetos para verificar se eles são considerados iguais ou não. Esse
   /// método, o operador == verifica se todas as propriedades dos objetos são
   /// iguais. Se todas as propriedades forem iguais, os objetos são considerados
-  /// iguais.
+  /// iguais e o método retorna true.
   ///
   /// A função identical(this, other) é usada para verificar se duas referências
   /// de objetos em Dart apontam para exatamente a mesma instância na memória.

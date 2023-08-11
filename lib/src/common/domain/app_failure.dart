@@ -10,16 +10,14 @@ part 'app_failure.freezed.dart';
 /// A classe `AppFailure` é usada para representar diferentes tipos de falhas na
 /// aplicação.
 ///
-/// A classe AppFailure tem a palavra reservada `with` como forma de utilizar o
-/// mixin, ou seja misturar o contéudo que será gerado pelo freezed no arquivo
-/// <u>app_failure.freezed.dart</u>
+/// A classe AppFailure tem a palavra reservada `with` para que possa ser
+/// utilizado um mixin, ou seja misturar o contéudo que será gerado pelo
+/// freezed no arquivo: <u>app_failure.freezed.dart</u>
 ///
-///  Logo a baixo temos os contrutores que utilizam as palavras reservadas
-/// `const` e `factory` como forma de criar os construtores de fábrica
-/// (**factory**) e também imutáveis (**const**) para receber o método a
-/// partir do código gerado no arquivo:
-///
-/// > <u>app_failure.freezed.dart</u>
+/// Logo abaixo temos os construtores nomeados que são criados cada um, para
+/// receber uma instância da classe `_$AppFailure`, sendo que pelo fato de
+/// utilizar a keyword const, tratam-se de construtore imutáveis, após sua
+/// inicialização não podem mais serem modificados em tempo de execução.
 @freezed
 class AppFailure<T> with _$AppFailure<T> {
   const factory AppFailure.notFound() = notFound;

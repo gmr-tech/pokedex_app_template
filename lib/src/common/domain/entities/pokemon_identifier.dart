@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 /// são imutáveis. Ou seja, depois que um objeto `PokemonIdentifier` é criados e
 /// seus valores não podem ser alterados.
 ///
-/// A classe `PokemonIdentifier` é criada como forma de determimar as formas
+/// A classe `PokemonIdentifier` é criada para determimar as formas
 /// de identificação do pokémon, levando em consideração dados como:
 ///
 /// 1. `id`: representa o valor do identificador único do pokemon;
@@ -28,14 +28,9 @@ class PokemonIdentifier {
   final String name;
   final String? detailsUrl;
 
-  /// Temos o método `copyWith()` como forma de fazer com que tenhamos a
+  /// Temos o método `copyWith()` para fazer com que tenhamos a
   /// possibillidade de gerar uma cópia de todos os dados e
   /// alterar somente o valor da propriedade que desejamos.
-  ///
-  /// O método possui a utilizaçåo do operador de coalescência nula `??` como
-  /// forma de fazer com que, caso ao inicializar o método e determinada
-  /// propriedade, como por exemplo, `attack`, seja nulo, a propriedade ainda
-  /// manterá o valor atual da propriedade original.
   PokemonIdentifier copyWith({
     int? id,
     String? name,

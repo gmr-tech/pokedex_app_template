@@ -141,11 +141,11 @@ class DSTypography extends ThemeExtension<DSTypography> {
   final TextStyle caption;
 
   static final DSTypography light = DSTypography(
-    caption: _$DSTypography.caption[0],
+    caption: _$DSTypography.pokemonID[0],
   );
 
   static final DSTypography dark = DSTypography(
-    caption: _$DSTypography.caption[1],
+    caption: _$DSTypography.pokemonID[1],
   );
 
   static final themes = [

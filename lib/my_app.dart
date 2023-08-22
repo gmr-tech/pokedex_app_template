@@ -2,20 +2,19 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import 'my_home_page.dart';
+import 'src/features/pokelist_page.dart';
 
 /// Esse código mostra um exemplo de como usar
 /// o pacote provider para fornecer o objeto notificador de mudanças,
 /// ele também configura um MaterialApp com temas claro e escuro, controlados
 /// pelo DSThemeController.
 ///
-/// O [ChangeNotifierProvider] é a classe que utilizamos para gerenciar o 
+/// O [ChangeNotifierProvider] é a classe que utilizamos para gerenciar o
 /// estado, sempre que ocorrem mudanças no objeto notificador de mudanças,
 /// o ChangeNotifierProvider notifica os widgets dependentes
 /// para que eles possam reconstruir suas partes relevantes.
 ///
-/// A partir da utilização dessa classe temas propriedade `create` proveniente 
+/// A partir da utilização dessa classe temas propriedade `create` proveniente
 /// da classe que tem como função criar instância do objeto
 /// notificador de mudanças, e torna essa instância disponível
 /// para todos os widgets despendentes que desejam acessá-la.
@@ -52,7 +51,7 @@ class MyApp extends StatelessWidget {
           themeMode: themeController.themeMode,
           theme: DSTheme.lightThemeData,
           darkTheme: DSTheme.darkThemeData,
-          home: const MyHomePage(title: 'Flutter Demo Home Page'),
+          home: const PokeListPage(),
         ),
       ),
     );

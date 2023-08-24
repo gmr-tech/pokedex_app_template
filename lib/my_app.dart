@@ -2,7 +2,7 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'src/features/pokelist_page.dart';
+import 'src/features/pokelist/presentation/pokelist_page.dart';
 
 /// Esse código mostra um exemplo de como usar
 /// o pacote provider para fornecer o objeto notificador de mudanças,

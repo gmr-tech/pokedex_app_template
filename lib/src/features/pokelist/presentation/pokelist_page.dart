@@ -5,15 +5,15 @@ import 'dart:developer';
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
-import '../../mock/pokemon_identifier.mock.dart';
-import '../common/domain/x_state.dart';
-import 'pokelist/presentation/ui_components/pokelist_bar.dart';
-import 'pokelist/presentation/ui_components/pokelist_drawer.dart';
-import 'pokelist/presentation/ui_components/pokelist_page_empty.dart';
-import 'pokelist/presentation/ui_components/pokelist_page_error.dart';
-import 'pokelist/presentation/ui_components/pokelist_page_loading.dart';
-import 'pokelist/presentation/ui_components/pokelist_page_success.dart';
-import 'pokelist/presentation/ui_components/pokelist_results_count.dart';
+import '../../../../mock/pokemon_identifier.mock.dart';
+import '../../../common/domain/x_state.dart';
+import 'ui_components/pokelist_bar.dart';
+import 'ui_components/pokelist_drawer.dart';
+import 'ui_components/pokelist_page_empty.dart';
+import 'ui_components/pokelist_page_error.dart';
+import 'ui_components/pokelist_page_loading.dart';
+import 'ui_components/pokelist_page_success.dart';
+import 'ui_components/pokelist_results_count.dart';
 
 /// Página criada para representação da pokelist page junto a todos os seus
 /// elementos.

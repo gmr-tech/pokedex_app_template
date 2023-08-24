@@ -6,12 +6,12 @@ import 'dart:developer';
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../mock/pokemon_details.mock.dart';
-import '../common/domain/entities/pokemon_identifier.dart';
-import '../common/domain/x_state.dart';
-import 'pokelist/presentation/ui_components/pokemon_list_card_error.dart';
-import 'pokelist/presentation/ui_components/pokemon_list_card_loading.dart';
-import 'pokelist/presentation/ui_components/pokemon_list_card_sucess.dart';
+import '../../../../../../mock/pokemon_details.mock.dart';
+import '../../../common/domain/entities/pokemon_identifier.dart';
+import '../../../common/domain/x_state.dart';
+import 'ui_components/pokemon_list_card_error.dart';
+import 'ui_components/pokemon_list_card_loading.dart';
+import 'ui_components/pokemon_list_card_sucess.dart';
 
 /// Widget que determina o layout do card representado na pokelist de forma
 /// a avaliar o estado da aplicação e determinatar a melhor informação para

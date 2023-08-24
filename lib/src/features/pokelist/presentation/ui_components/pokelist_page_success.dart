@@ -4,8 +4,8 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../common/domain/entities/pokemon_identifier.dart';
-import '../../../pokelist_present_const.dart';
-import '../../../pokemon_list_card.dart';
+import '../pokelist_present_const.dart';
+import '../pokemon_list_card.dart';
 
 /// `PoleListPageSucess` foi desenvolviada para mostrar ao usuário o estado de
 /// sucesso da página de pokelist.

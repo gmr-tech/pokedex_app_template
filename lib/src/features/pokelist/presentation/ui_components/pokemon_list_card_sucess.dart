@@ -23,8 +23,9 @@ class PokemonListCardSucess extends StatelessWidget {
   Widget build(BuildContext context) {
     final color = pokemon.types.first.color;
 
-    // Ink é um widget utilizado para configurar os aspectos decorativos
-    // de um widget filho.
+    // Ink é um widget utilizado para configurar as propriedades decorativas
+    // do card no estado de sucesso. Neste caso, utilizado para adicionar um
+    // gradiente e o arredondamento da borda.
     return Ink(
       decoration: BoxDecoration(
         gradient: LinearGradient(

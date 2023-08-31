@@ -97,7 +97,7 @@ abstract class _PokeListController with Store {
   /// filtro, por meio do valor booleano dado pelo Map. Como por exemplo:
   /// caso o pokémon do tipo `bug`, tenho como seu valor `true`, isso
   /// significa que este tipo está selecionado, caso contrário será `false`.
-  /// Porém, inicalmento todos vem selecionados como `true`.
+  /// Porém, inicialmento todos vem selecionados como `true`.
   @observable
   ObservableMap<PokemonType, bool> selectedTypes =
       ObservableMap<PokemonType, bool>.of(

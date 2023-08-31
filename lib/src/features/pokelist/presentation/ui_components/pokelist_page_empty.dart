@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../utils/display_strings.dart';
 
-/// Página criada para informar o usuário sobre o estado vaziu da aplicação.
+/// Página criada para informar o usuário sobre o estado vaziu da pokelist.
 class PokeListPageEmpty extends StatelessWidget {
   const PokeListPageEmpty({
     super.key,

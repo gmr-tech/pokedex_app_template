@@ -27,14 +27,23 @@ class _PokelistSortAndFilterScreenState
     extends State<PokelistSortAndFilterScreen> {
   final expansionController = ExpansionTileController();
 
-  // TODO(Renato): move to controller
+  // Variavel criada para determinar o estado dos elementos presentes no
+  // modal de ordenaçào e filtragem.
+  //
+  // Valor adicionado para inicializar.
   XState detailsState = const XState.initial();
+
+  // Variável criada para determinar se o modo de pesquisa está ativo ou não
+  //
+  // Valor acrescentado para inicializar.
   bool isSearching = false;
 
   @override
   Widget build(BuildContext context) {
-    // TODO(Renato): remove mock assignment
+    // Novo valor atribuído.
     detailsState = const XState.success();
+
+    // Novo valor atribuído.
     isSearching = true;
 
     return Column(

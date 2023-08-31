@@ -14,8 +14,8 @@ import 'ui_components/pokemon_list_card_loading.dart';
 import 'ui_components/pokemon_list_card_sucess.dart';
 
 /// Widget que determina o layout do card representado na pokelist de forma
-/// a avaliar o estado da aplicação e determinatar a melhor informação para
-/// passar ao usuário, sendo: loading, sucess e or else, que significa, caso
+/// a avaliar o estado do componente e determinar a melhor informação para
+/// passar ao usuário, sendo: loading, success e or else, que significa, caso
 /// todos os outros estados não sejam o correto.
 class PokemonListCard extends StatefulWidget {
   const PokemonListCard({
@@ -30,15 +30,17 @@ class PokemonListCard extends StatefulWidget {
 }
 
 class _PokemonListCardState extends State<PokemonListCard> {
-  // TODO(Renato): move to controller
+  // Variavel criada acessar a classe XState e determinar um estado ao card.
+  //
+  // Valor adicionado para inicializar.
   XState state = const XState.initial();
 
   @override
   Widget build(BuildContext context) {
-    // TODO(Renato): remove mock assignment
+    // Novo valor atribuído.
     state = const XState.success();
 
-    // InkWell: widget que serve para tranformar qualquer outro widget
+    // InkWell: widget utilizado para transformar qualquer outro widget
     // filho em um botão.
     return InkWell(
       borderRadius: const BorderRadius.all(DSConstProperty.radius),

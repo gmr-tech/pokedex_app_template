@@ -19,8 +19,9 @@ class PokemonListCardError extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Ink é um widget utilizado para configurar os aspectos decorativos
-    // de um widget filho.
+    // Ink é um widget utilizado para configurar as propriedades decorativas
+    // do card no estado de erro. Neste caso, utilizado para adicionar um
+    // gradiente e o arredondamento da borda.
     return Ink(
       decoration: BoxDecoration(
         gradient: LinearGradient(
@@ -36,12 +37,12 @@ class PokemonListCardError extends StatelessWidget {
 
       // LayoutBuilder é um widget utilizado para tratar a responsividade da
       // tela em relação ao tamanho de cada widget em relação ao tamanho da
-      // tela. Nesse caso adicionado para arrumar escalonamento de cada widget
+      // tela. Nesse caso, adicionado para arrumar escalonamento de cada widget
       // do card no estado de erro.
       child: LayoutBuilder(
         builder: (context, constraints) {
-          /// Stack é um widget utilizado para conseguir empilhar elementos por
-          /// meio dos widgets filhos.
+          /// Stack é um widget utilizado para conseguir empilhar os elementos
+          /// que serão representados dentro do card.
           return Stack(
             alignment: Alignment.center,
             children: [

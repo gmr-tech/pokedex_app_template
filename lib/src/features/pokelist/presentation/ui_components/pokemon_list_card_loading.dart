@@ -18,8 +18,9 @@ class PokemonListCardLoading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Ink é um widget utilizado para configurar os aspectos decorativos
-    // de um widget filho.
+    // Ink é um widget utilizado para configurar as propriedades decorativas
+    // do card no estado de carregamento. Neste caso, utilizado para adicionar
+    // um gradiente e o arredondamento da borda.
     return Ink(
       decoration: BoxDecoration(
         gradient: LinearGradient(
@@ -34,7 +35,7 @@ class PokemonListCardLoading extends StatelessWidget {
       ),
       // LayoutBuilder é um widget utilizado para tratar a responsividade da
       // tela em relação ao tamanho de cada widget em relação ao tamanho da
-      // tela. Nesse caso adicionado para arumar escalonamento de cada widget
+      // tela. Nesse caso, adicionado para arumar escalonamento de cada widget
       // no card de loading.
       child: LayoutBuilder(
         builder: (context, constraints) => Stack(

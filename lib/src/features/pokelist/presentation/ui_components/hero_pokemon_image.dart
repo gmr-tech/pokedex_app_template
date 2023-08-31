@@ -18,12 +18,14 @@ class HeroPokemonImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Hero é o widget que irá realizar a transição da imagem do pokémon,
-    // presente na grid view para a foto do perfil do pokémon.
+    // Hero é o widget utilizado para realizar a animação de transição da
+    // imagem do pokémon, presente na grid view para a foto do perfil do
+    // pokémon.
     return Hero(
-      // A `tag` é uma propriedade que faz a comparação entre os dois locais de
-      // transição, entre os dois Heros, para saber em quais objetos
-      // realizar a transição.
+      // A `tag` é uma propriedade do widget Hero que foi adicionado para
+      // identificar o caminho de transição que será realizado entre as duas
+      // fotos, a imagem da gridview e a imagem do perfil de estatisticas do
+      // pokémon.
       tag: id.toString(),
 
       // **CachedNetworkImage** foi usado para fazer com que cada imagem pegada
@@ -33,7 +35,7 @@ class HeroPokemonImage extends StatelessWidget {
         // Caminho da imagem.
         imageUrl: imageUrl,
         // placeholder é uma propriedade utilizada para mostrar algo na tela em
-        // em quanto a imagem é baixada.
+        // em quanto a imagem é baixada, no caso o icone de pokebola.
         placeholder: (context, url) => DSIcon.unconstrained(
           icon: DSIconPath.pokeball,
           color: Theme.of(context).disabledColor,
@@ -48,7 +50,7 @@ class HeroPokemonImage extends StatelessWidget {
           ),
         ),
         // propriedade `fit` utilizada para estabelecer um tamanho para a imagem
-        // em relação ao espaço disponível para a imagem.
+        // em relação ao espaço disponível para ela.
         fit: BoxFit.contain,
       ),
     );

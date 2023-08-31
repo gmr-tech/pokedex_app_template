@@ -16,15 +16,16 @@ class PokeListSortAndFilterButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      // A função [unwaited()] serve para exetucar um bloco de código
-      // assíncrono sem esperar a conclusão dele.
+      // O unawaited foi adicionado para fazer com que o restante do código
+      // continue sendo executado sem esperar a conclusão da utilização
+      // do modal, que é uma função Future.
       onPressed: () => unawaited(
         showModalBottomSheet(
-          // A propriedade `isScrollControlled` serve para determinar se o
+          // A propriedade `isScrollControlled` é utilizada para determinar se o
           // modal será controlado por scroll ou não;
           isScrollControlled: true,
 
-          // A propriedade `contraints` serve para determinar o tamanho do
+          // A propriedade `constraints` serve para determinar o tamanho do
           // modal.
           constraints: BoxConstraints.loose(
             // Size: widget adicionado para receber os valores de altura e

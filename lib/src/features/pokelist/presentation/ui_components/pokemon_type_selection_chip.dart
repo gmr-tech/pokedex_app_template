@@ -23,8 +23,9 @@ class PokemonTypeSelectionChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Ink é um widget utilizado para configurar os aspectos decorativos
-    // de um widget filho.
+    // Ink é um widget utilizado para configurar as propriedades decorativas
+    // do chip no estado de erro. Neste caso, utilizado para adicionar a cor e
+    // o arredondamento do chip.
     return Ink(
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.all(
@@ -36,7 +37,7 @@ class PokemonTypeSelectionChip extends StatelessWidget {
                 .disabledColor
                 .withOpacity(CommonPresentConst.midOpacity),
       ),
-      // InkWell: widget que serve para tranformar qualquer outro widget
+      // InkWell: widget utilizado para transformar qualquer outro widget
       // filho em um botão.
       child: InkWell(
         onTap: onTap,

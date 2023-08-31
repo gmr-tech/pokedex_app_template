@@ -12,8 +12,10 @@ class PokeListPageError extends StatelessWidget {
     this.onRefresh,
   });
 
-  /// Função sem retorno adicionada para fazer com que ela realize a ação de
-  /// atualizar a página da pokelist.
+  /// Função criada para executar um conjunto de comandos de modo direto, de
+  /// forma que que não precise retornar nenhum valor ou passar parâmetros,
+  /// permitindo especificar facilmente o que deve acontecer, no caso, a ação
+  /// de atualizar a pokelist.
   final VoidCallback? onRefresh;
 
   @override

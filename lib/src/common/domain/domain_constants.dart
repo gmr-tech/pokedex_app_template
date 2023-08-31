@@ -9,9 +9,12 @@ class DomainConstants {
   /// ser buscados.
   static const int maxFetchCount = 1010;
 
-  /// The maximum number of pokemons that can be fetched from the API.
+  /// O número máximo de pokémons que podem ser buscados pela a API.
   static const int pokemonMaxCount = 1281;
 
-  /// Varíavel criado para deteminar um número base a ser buscado de itens.
+  /// O valor máximo de uma estatística base para um Pokémon.
+  ///
+  /// Esta variável foi criada para especificar o valor mais alto possível
+  /// para uma estatística base de um Pokémon, como HP, Ataque, Defesa, etc.
   static const int baseStateMax = 255;
 }

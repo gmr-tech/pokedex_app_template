@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import '../../../../utils/display_strings.dart';
 
 /// Página criada para mostrar ao usuário o status
-/// de carregamento da aplicação.
+/// de carregamento da pokelist.
 class PokeListPageLoading extends StatelessWidget {
   const PokeListPageLoading({super.key});
 

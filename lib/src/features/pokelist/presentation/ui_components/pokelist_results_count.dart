@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../utils/display_strings.dart';
 
-/// Classe criada para mostrar a quantidade de pokémons resultantes em
-/// determinado filtro aplicado.
+/// Classe criada para mostrar ao usuário a quantidade de pokémons resultantes
+/// ao escolher filtrar por um tipo específico de pokémon.
 class PokelistResultsCount extends StatelessWidget {
   const PokelistResultsCount({
     required this.bottomPadding,

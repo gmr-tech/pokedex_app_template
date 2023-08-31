@@ -9,8 +9,10 @@ import '../../../../common/presentation/common_present_const.dart';
 import '../../../../utils/display_strings.dart';
 import 'pokelist_sort_and_filter_button.dart';
 
-/// `PokelistBar` é um widget criado para estabelecer características de
-/// layout e funções da appBar da aplicação.
+/// `PokeListBar` foi criado para conseguir tornar a barra superior do app
+/// reutilizável, além de tornar mais simples a manutenção do widget em apenas
+/// um arquivo. O componente foi criada para ter acesso tanto as funções de
+/// filtragem do app, quanto ao menu drawer do app.
 class PokeListBar extends StatefulWidget {
   const PokeListBar({
     super.key,
@@ -28,12 +30,14 @@ class _PokeListBarState extends State<PokeListBar> {
   /// Variável criada para capturar o conteúdo adicionado ao formulário.
   final searchController = TextEditingController();
 
-  // TODO(Renato): move to controller
+  /// Variável criada para determinar se o modo de pesquisa está ativo ou não
+  ///
+  /// Valor acrescentado para inicializar.
   bool isSearching = false;
 
   @override
   Widget build(BuildContext context) {
-    // TODO(Renato): remove mock assignment
+    /// Novo valor atribuído.
     isSearching = false;
 
     return Theme(
@@ -75,7 +79,7 @@ class _PokeListBarState extends State<PokeListBar> {
                   ),
 
                   // SizedBox já implementado na pasta widgets do package
-                  // design_system, utilizado para ampliar o espaçamento
+                  // design_system. Utilizado para ampliar o espaçamento
                   // entre o ícone e a borda.
                   const DSBoxSpace.xSmall(),
                 ],
@@ -83,7 +87,9 @@ class _PokeListBarState extends State<PokeListBar> {
             ),
 
             // AnimatedSize é um widget que serve para realizar uma
-            // animação de tamanho no widget filho descrito.
+            // animação de tamanho no widget filho descrito. No caso, o
+            // AnimatedSize foi adicionado para realizar a animaçåo de tamanho
+            // da barra de pesquisa.
             AnimatedSize(
               duration: const Duration(
                 milliseconds: CommonPresentConst.mediumAnimationDuration,
@@ -112,14 +118,17 @@ class _PokeListBarState extends State<PokeListBar> {
                               // para submeter o campo de texto, e junto com
                               // o método focusNode.unfocus() tirar o foco
                               // do campo, quando submetido.
+                              // Sendo assim, ele é utilizado para fazer com que
+                              // o após ele ser submetido, o campo perca o foco
+                              // e a pesquisa ganhe total destaque.
                               onFieldSubmitted: (_) => focusNode.unfocus(),
                               textInputAction: TextInputAction.done,
                             ),
                           ),
 
-                          // AnimatedSize é um widget serve para realizar uma
-                          // animação de tamanho no widget filho descrito no
-                          // seu atributo child.
+                          // AnimatedSize foi adicionado para realizar
+                          // uma animação de tamanho em relação ao ícone
+                          // de limpeza da barra de pesquisa.
                           AnimatedSize(
                             /// Atributo que serve para determinar a duração
                             /// da animação.
@@ -139,9 +148,8 @@ class _PokeListBarState extends State<PokeListBar> {
                         ],
                       ),
                     )
-                  // SizedBox é utilizado para criar um widget vázio. Em outras
-                  // palavras uma caixa tão pequena quanto o seu pai permitir,
-                  // no caso AnimatedSize.
+                  // SixedBox utilizado para que caso a pesquisa não seja
+                  // acionada, no caso, false, não apareça a barra de pesquisa.
                   : const SizedBox.shrink(),
             ),
           ],

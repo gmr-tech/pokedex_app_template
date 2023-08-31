@@ -7,8 +7,8 @@ import '../../../../common/presentation/theme_switcher_button.dart';
 import '../../../../utils/display_strings.dart';
 
 /// A classe `PokeListDrawer` serve para criar a estrutura do menu drawer da
-/// aplicação, sendo tanto implementação dos listile (criados em outros
-/// arquivos) quanto o cabeçalho com o nome do app.
+/// aplicação, sendo tanto a implementação dos listiles (criados em outros
+/// arquivos), quanto o cabeçalho com o nome do app.
 class PokeListDrawer extends StatelessWidget {
   const PokeListDrawer({
     super.key,

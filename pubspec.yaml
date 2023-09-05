@@ -28,12 +28,15 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  cached_network_image: ^3.2.3
   cupertino_icons: ^1.0.2
   design_system:
     path: design_system/
   flutter:
     sdk: flutter
+  flutter_mobx: ^2.0.6+5
   freezed_annotation: ^2.2.0
+  mobx: ^2.2.0
   provider: ^6.0.5
 
 
@@ -48,6 +51,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   freezed: ^2.4.0
+  mobx_codegen: ^2.3.0
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -67,9 +71,10 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - packages/design_system/assets/icons/pokeball.svg
+    - packages/design_system/assets/icons/straighten.svg
+    - packages/design_system/assets/icons/weight.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

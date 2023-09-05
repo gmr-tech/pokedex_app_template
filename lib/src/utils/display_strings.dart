@@ -1,8 +1,12 @@
 // ignore_for_file: public_member_api_docs
 
-/// A classe `DisplayStrings` tem como objetivo armezanar textos que poderão
+/// A classe `DisplayStrings` tem como objetivo armazenar textos que poderão
 /// ser exibidos em telas. De forma a facitilitar o acesso e restringindo erros
 /// de digitação.
+/// Classe criada para armazenar Strings como **consts** para serem imutáveis
+/// e também **static** para que possam ser acessado em outras partes do código
+/// de forma independente, sem que precise ser criado instâncias da própria
+/// classe.
 class DisplayStrings {
   static const String appName = 'Pokédex';
 
@@ -26,7 +30,7 @@ class DisplayStrings {
   static const String refresh = 'Refresh';
 
   static const String emptyPokemonsMessage =
-      'No pokekons found with givens filters or search term';
+      'No pokemons found with givens filters or search term';
 
   static const String clear = 'Clear';
 

@@ -2,7 +2,10 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'src/features/pokelist/presentation/pokelist_page.dart';
+
+import '../../routes/go_router_singleton.dart';
+import '../../utils/display_strings.dart';
+import 'common_present_const.dart';
 
 /// Esse código mostra um exemplo de como usar
 /// o pacote provider para fornecer o objeto notificador de mudanças,
@@ -28,14 +31,14 @@ import 'src/features/pokelist/presentation/pokelist_page.dart';
 /// o gerenciamente de estado direcionado para um objeto especifico, e seus
 /// filhos.
 ///
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class PokedexApp extends StatelessWidget {
+  const PokedexApp({super.key});
 
-  /// This widget is the root of your application.
+  // Este widget é a raiz da aplicação.
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<DSThemeController>(
-      create: (_) => DSThemeController(initialMode: DSThemeMode.light),
+      create: (_) => DSThemeController(initialMode: DSThemeMode.dark),
 
       /// Consumer é usado para reconstruir as informações
       /// dos widgets e objetos sobre as mudanças que ocorreram
@@ -45,14 +48,40 @@ class MyApp extends StatelessWidget {
           context,
           DSThemeController themeController,
           child,
-        ) =>
-            MaterialApp(
-          title: 'Flutter Demo',
-          themeMode: themeController.themeMode,
-          theme: DSTheme.lightThemeData,
-          darkTheme: DSTheme.darkThemeData,
-          home: const PokeListPage(),
-        ),
+        ) {
+          return DecoratedBox(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomCenter,
+                colors: [
+                  DSConstColor.primary,
+                  DSConstColor.primaryDarker,
+                ],
+              ),
+            ),
+            child: Center(
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(
+                  maxWidth: CommonPresentConst.maxViewportWidth,
+                ),
+                child: Material(
+                  // [MaterialApp.router] construtor nomeado do GoRouter
+                  // adicionado para ter acesso a atributos especificos de
+                  // configuração da utilização do GoRouter.
+                  child: MaterialApp.router(
+                    routerConfig: GoRouterSingleton().goRouter,
+                    debugShowCheckedModeBanner: false,
+                    title: DisplayStrings.appName,
+                    themeMode: themeController.themeMode,
+                    theme: DSTheme.lightThemeData,
+                    darkTheme: DSTheme.darkThemeData,
+                  ),
+                ),
+              ),
+            ),
+          );
+        },
       ),
     );
   }

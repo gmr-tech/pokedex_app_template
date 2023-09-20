@@ -43,4 +43,8 @@ class DisplayStrings {
 
   static const String advancedFilterInfo = 'Advanced filters are enable after '
       'fetching all pokemons. Check the progress bar below.';
+
+  static const String pageNotFound = 'Page not found';
+
+  static const String goHome = 'Go to home';
 }

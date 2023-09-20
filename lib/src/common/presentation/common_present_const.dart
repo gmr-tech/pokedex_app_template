@@ -5,7 +5,9 @@
 class CommonPresentConst {
   // static const int antiFlashingTime = 1000;
 
-  // static const double maxViewportWidth = 640;
+  /// Variável criada para determinar o tamanho máximo em largura da janela de
+  /// exibição.
+  static const double maxViewportWidth = 640;
 
   // static const int debounceTime = 500;
 

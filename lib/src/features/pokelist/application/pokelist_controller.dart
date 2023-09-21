@@ -23,6 +23,7 @@ part 'pokelist_controller.g.dart';
 /// Observer, onde é necessário que tenha objetos observáveis dentro da
 /// aplicação e também ações que serão disparadas e consequentemente geraram
 /// reações, resultando na rebuild da tela.
+
 class PokeListController = _PokeListController with _$PokeListController;
 
 /// PokelistController foi criada para adicicionar os métodos e dados que serão

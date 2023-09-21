@@ -4,14 +4,18 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import '../../application/pokelist_controller.dart';
 import 'pokelist_sort_and_filter_screen.dart';
 
 /// `PokeListSortAndFilterButton` é um widget criado para desenvolver o botão,
 /// junto com o modal de filtragem de pokémons.
 class PokeListSortAndFilterButton extends StatelessWidget {
   const PokeListSortAndFilterButton({
+    required this.controller,
     super.key,
   });
+
+  final PokeListController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +40,9 @@ class PokeListSortAndFilterButton extends StatelessWidget {
             ),
           ),
           context: context,
-          builder: (_) => const PokelistSortAndFilterScreen(),
+          builder: (_) => PokelistSortAndFilterScreen(
+            controller: controller,
+          ),
         ),
       ),
 

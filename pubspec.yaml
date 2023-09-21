@@ -55,9 +55,22 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
-  injectable_generator: ^2.1.5
   freezed: ^2.4.0
   mobx_codegen: ^2.3.0
+
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  web: 
+    generate: true
+  image_path: 'assets/images/launch_icon.png'
+  background_color: "#DC0A2D"
+  remove_alpha_ios: true
+
+flutter_native_splash:
+  color: "#DC0A2D"
+  image: "assets/images/launch_icon.png"
 
 
 
@@ -81,6 +94,8 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/test/
+    - assets/test/pokemon.png
     - packages/design_system/assets/icons/pokeball.svg
     - packages/design_system/assets/icons/straighten.svg
     - packages/design_system/assets/icons/weight.svg

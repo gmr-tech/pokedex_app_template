@@ -26,7 +26,7 @@ class PokelistResultsCount extends StatelessWidget {
         DSConstSpace.medium,
         DSConstSpace.small,
         DSConstSpace.xxSmall,
-        bottomPadding,
+        bottomPadding > 0 ? bottomPadding : DSConstSpace.medium,
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,

@@ -107,7 +107,7 @@ class PokeListRepository implements IPokeListRepository {
         jsonDecode(await file.readAsString()),
       ).toDomain();
 
-      // Retornar a lista de identificadores de pokémons como sucesso (right)
+      // Retornar a lista de detalhes de pokémons como sucesso (right).
       return right(pokemon);
     } on Exception catch (e) {
       // Tratar exceções e convertê-las em falhas com o GlobalExceptionHandle.

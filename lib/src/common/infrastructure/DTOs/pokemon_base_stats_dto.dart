@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 
 import '../../domain/entities/pokemon_base_stats.dart';
 
-/// /// Classe criada para realizar a desserialização dos dados vindos da api, para
+/// Classe criada para realizar a desserialização dos dados vindos da api, para
 /// o formato do objeto [PokemonBaseStats].
 @immutable
 class PokemonBaseStatsDTO {

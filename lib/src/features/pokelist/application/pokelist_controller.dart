@@ -34,20 +34,31 @@ abstract class _PokeListController with Store {
     // O método `unawaited` é utilizado para não esperar o resultado total
     // do método fetchAllPokemonsIdentifiers, sendo assim, continuando a
     // execução da aplicação.
+    //
+    // [fetchAllPokemonsIdentifiers] foi adicionado ao construtor da classe
+    // para que o método possa ser inicializado em segundo plano quando
+    // uma instância da classe for criada. Fazendo com que a busca dos
+    // identificadores de pokémons seja feita de forma mais dinâmica, pelo
+    // fato da busca demorar.
     unawaited(fetchAllPokemonsIdentifiers());
   }
 
-  /// Lista que receberá todos os identificadores de pokémons.
+  /// Essa lista é privada para evitar que partes externas do código acessem
+  /// ou modifiquem os dados recebidos diretamente.
   final List<PokemonIdentifier> _allPokemonsIdentifiers = [];
 
-  /// Lista que receberá todos os pokémons.
+  /// Essa lista é privada para evitar que partes externas do código acessem
+  /// ou modifiquem os dados recebidos diretamente.
   final List<Pokemon> _allPokemons = [];
 
   /// @observable é um tipo de elemento que será atualizado a partir de uma
   /// action startada no código.
   ///
   /// allPokemonsIdentifiers foi criada como uma observable list para que ela
-  /// possa ser modificada decorrente a mudança que ocorrer nela.
+  /// possa ser modificada decorrente a mudança que ocorrer nela. É utilizada
+  /// para armazaner o conteúdo da lista privada _allPokemonsIdentifiers que
+  /// é abastecida de forma privada, devido isso, não possuem o estado
+  /// observável pelo MobX.
   @observable
   ObservableList<PokemonIdentifier> allPokemonsIdentifiers =
       ObservableList<PokemonIdentifier>();

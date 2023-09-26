@@ -2,9 +2,10 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:pokedex_app_template/src/features/pokelist/presentation/pokelist_present_const.dart';
 
-// Used to build pokelist gridview in tests
-// Widget criado para ser utilizado nos cenários de tests
-// referentes ao estado de representação da gridview da pokelist.
+/// Usado para construir o gridview pokelist em testes.
+/// Widget criado para ser utilizado nos cenários de tests
+/// referentes ao estado de representação da gridview da pokelist.
+//
 // ignore: avoid-top-level-members-in-tests
 class GridViewForTesting extends StatelessWidget {
   const GridViewForTesting({

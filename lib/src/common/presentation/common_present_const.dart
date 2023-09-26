@@ -8,7 +8,7 @@ class CommonPresentConst {
   /// exibição.
   static const double maxViewportWidth = 640;
 
-  /// Standard debounce time for user input in milliseconds
+  /// Tempo de depuração padrão para entrada do usuário em milissegundos
   static const int debounceTime = 500;
 
   /// Rápida duração da animação.

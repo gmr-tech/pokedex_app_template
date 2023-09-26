@@ -4,6 +4,9 @@
 /// constante, que serão utilizados em toda aplicação, como tempo de
 /// duração de animações e outros valores comuns.
 class CommonPresentConst {
+  /// Time in milliseconds to avoid flashing when loading data
+  static const int antiFlashingTime = 1000;
+
   /// Variável criada para determinar o tamanho máximo em largura da janela de
   /// exibição.
   static const double maxViewportWidth = 640;

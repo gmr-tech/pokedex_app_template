@@ -4,6 +4,8 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../common/domain/entities/pokemon_identifier.dart';
+import '../../../../common/presentation/common_present_const.dart';
+import '../../../../utils/test_friendly_wrapper.dart';
 import 'pokemon_list_card_id.dart';
 import 'pokemon_list_card_name.dart';
 
@@ -46,12 +48,17 @@ class PokemonListCardLoading extends StatelessWidget {
               maxWidth: constraints.maxWidth,
             ),
             PokemonListCardID(id: pokemonID.id),
-            const Positioned(
-              top: DSConstSpace.xLarge,
-              bottom: DSConstSpace.medium,
-              left: DSConstSpace.large,
-              right: DSConstSpace.large,
-              child: CircularProgressIndicator.adaptive(),
+            const TestFriendlyWrapper(
+              replacement: CircularProgressIndicator.adaptive(
+                value: CommonPresentConst.progressIndicatorTestValue,
+              ),
+              child: Positioned(
+                top: DSConstSpace.xLarge,
+                bottom: DSConstSpace.medium,
+                left: DSConstSpace.large,
+                right: DSConstSpace.large,
+                child: Center(child: CircularProgressIndicator.adaptive()),
+              ),
             ),
           ],
         ),

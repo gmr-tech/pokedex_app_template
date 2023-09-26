@@ -1,13 +1,15 @@
 // ignore_for_file: public_member_api_docs
 
-/// `CommonPresentConst` é uma classe criada para armazenar valores que serão
-/// utilizados para controlar a opacidade e tempo de animação dos elementos.
+/// `CommonPresentConst` foi criada para armazenar valores de forma
+/// constante, que serão utilizados em toda aplicação, como tempo de
+/// duração de animações e outros valores comuns.
 class CommonPresentConst {
-  // static const int antiFlashingTime = 1000;
+  /// Variável criada para determinar o tamanho máximo em largura da janela de
+  /// exibição.
+  static const double maxViewportWidth = 640;
 
-  // static const double maxViewportWidth = 640;
-
-  // static const int debounceTime = 500;
+  /// Tempo de depuração padrão para entrada do usuário em milissegundos
+  static const int debounceTime = 500;
 
   /// Rápida duração da animação.
   static const int fastAnimationDuration = 200;

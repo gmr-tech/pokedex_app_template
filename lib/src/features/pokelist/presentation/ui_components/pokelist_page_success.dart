@@ -12,7 +12,7 @@ import '../pokemon_list_card.dart';
 class PokeListPageSuccess extends StatefulWidget {
   const PokeListPageSuccess({
     required this.pokemons,
-    required this.bottomPadding,
+    this.bottomPadding = DSConstSpace.medium,
     super.key,
   });
 

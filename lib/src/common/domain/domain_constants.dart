@@ -17,4 +17,13 @@ class DomainConstants {
   /// Esta variável foi criada para especificar o valor mais alto possível
   /// para uma estatística base de um Pokémon, como HP, Ataque, Defesa, etc.
   static const int baseStateMax = 255;
+
+  /// Variável criada para determinar a quantidade de dias em duração do
+  /// conteúdo do cache.
+  static const int cacheDurationInDays = 7;
+
+  /// [pokelistCacheKey] foi criada para ser a chave que pode associar um
+  /// conjunto dados em cache referentes a pokelist. No momento de criação de
+  /// uma instância de CacheManager
+  static const String pokelistCacheKey = 'Pokelist';
 }

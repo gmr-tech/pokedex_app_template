@@ -83,6 +83,8 @@ class PokemonListCardSucess extends StatelessWidget {
                             ),
                             child: Text(
                               pokemon.types[index].value,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
                             ),
                           ),
                         ),

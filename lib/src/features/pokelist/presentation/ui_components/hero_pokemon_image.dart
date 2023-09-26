@@ -4,6 +4,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../utils/test_friendly_wrapper.dart';
+
 /// Classe criada para conseguir coletar as imagens de cada pokémon
 /// pela api e também determinar a configuração do tamanho para cada imagem.
 class HeroPokemonImage extends StatelessWidget {
@@ -31,27 +33,30 @@ class HeroPokemonImage extends StatelessWidget {
       // **CachedNetworkImage** foi usado para fazer com que cada imagem pegada
       // da internet, possa ser armazenada em cache para que uma mesma imagem
       // não precise ser baixada duas vezes.
-      child: CachedNetworkImage(
-        // Caminho da imagem.
-        imageUrl: imageUrl,
-        // placeholder é uma propriedade utilizada para mostrar algo na tela em
-        // em quanto a imagem é baixada, no caso o icone de pokebola.
-        placeholder: (context, url) => DSIcon.unconstrained(
-          icon: DSIconPath.pokeball,
-          color: Theme.of(context).disabledColor,
-        ),
-        // errorWidget é o widget de erro que será mostrado caso de erro
-        // no carregamento da imagem.
-        errorWidget: (context, url, error) => Center(
-          child: Icon(
-            Icons.error,
-            color: Theme.of(context).colorScheme.error,
-            size: DSConstSize.iconSizeXLarge,
+      child: TestFriendlyWrapper(
+        replacement: Image.asset('assets/test/pokemon.png'),
+        child: CachedNetworkImage(
+          // Caminho da imagem.
+          imageUrl: imageUrl,
+          // placeholder é uma propriedade utilizada para mostrar algo na tela
+          // em quanto a imagem é baixada, no caso o icone de pokebola.
+          placeholder: (context, url) => DSIcon.unconstrained(
+            icon: DSIconPath.pokeball,
+            color: Theme.of(context).disabledColor,
           ),
+          // errorWidget é o widget de erro que será mostrado caso de erro
+          // no carregamento da imagem.
+          errorWidget: (context, url, error) => Center(
+            child: Icon(
+              Icons.error,
+              color: Theme.of(context).colorScheme.error,
+              size: DSConstSize.iconSizeXLarge,
+            ),
+          ),
+          // propriedade `fit` utilizada para estabelecer um tamanho para a
+          // imagem em relação ao espaço disponível para ela.
+          fit: BoxFit.contain,
         ),
-        // propriedade `fit` utilizada para estabelecer um tamanho para a imagem
-        // em relação ao espaço disponível para ela.
-        fit: BoxFit.contain,
       ),
     );
   }

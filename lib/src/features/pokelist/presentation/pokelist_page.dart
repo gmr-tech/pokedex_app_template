@@ -5,7 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
 import '../../../common/domain/x_state.dart';
+import '../../../config/injection.dart';
 import '../application/pokelist_controller.dart';
+import '../domain/i_pokelist_repository.dart';
 import 'ui_components/pokelist_bar.dart';
 import 'ui_components/pokelist_drawer.dart';
 import 'ui_components/pokelist_page_empty.dart';
@@ -26,7 +28,7 @@ class PokeListPage extends StatefulWidget {
 class _PokeListPageState extends State<PokeListPage> {
   /// Instância do controller da pokelist criado para conseguir acessar e
   /// utilizar os métodos e variáveis criados no arquivo.
-  final controller = PokeListController();
+  final controller = PokeListController(getIt<IPokeListRepository>());
 
   @override
   Widget build(BuildContext context) {

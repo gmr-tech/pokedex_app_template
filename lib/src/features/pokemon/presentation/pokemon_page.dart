@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../common/domain/entities/pokemon.dart';
+import '../../../config/injection.dart';
 import '../application/pokemon_controller.dart';
 import '../domain/i_pokemon_repository.dart';
 import 'ui_components/pokemon_page_error.dart';
@@ -50,7 +51,7 @@ class _PokemonPageState extends State<PokemonPage> {
       } else {
         controller = Get.put(
           PokemonController(
-            IPokemonRepository,
+            getIt<IPokemonRepository>(),
             widget.id!,
           ),
           tag: 'pokemon_controller_${widget.id}',

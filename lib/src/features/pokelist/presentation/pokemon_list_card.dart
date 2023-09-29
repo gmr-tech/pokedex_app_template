@@ -1,14 +1,16 @@
 // ignore_for_file: public_member_api_docs, discarded_futures
 // ignore_for_file: prefer-async-await, avoid-ignoring-return-values
 
-import 'dart:developer';
-
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 
-import '../../../../../../mock/pokemon_details.mock.dart';
 import '../../../common/domain/entities/pokemon_identifier.dart';
-import '../../../common/domain/x_state.dart';
+import '../../../config/injection.dart';
+import '../../../routes/app_routes.dart';
+import '../../pokemon/application/pokemon_controller.dart';
+import '../../pokemon/domain/i_pokemon_repository.dart';
 import 'ui_components/pokemon_list_card_error.dart';
 import 'ui_components/pokemon_list_card_loading.dart';
 import 'ui_components/pokemon_list_card_sucess.dart';
@@ -30,21 +32,40 @@ class PokemonListCard extends StatefulWidget {
 }
 
 class _PokemonListCardState extends State<PokemonListCard> {
-  // Variavel criada acessar a classe XState e determinar um estado ao card.
-  //
-  // Valor adicionado para inicializar.
-  XState state = const XState.initial();
+// Obtém o id como parâmetro e controlador de fluxo para garantir
+// que o usuário possa carregar qualquer
+// ignore: avoid-late-keyword
+  late final PokemonController controller;
+
+  // [initState] inicializa o estado e configura um PokemonController.
+  // O PokemonController é usado para buscar as informações
+  // sobre o Pokémon com base em seu ID.
+  @override
+  void initState() {
+    super.initState();
+    controller = Get.put(
+      PokemonController(
+        getIt<IPokemonRepository>(),
+        widget.pokemonIdentifier.id,
+      ),
+      // A tag é usada para identificar exclusivamente uma
+      // instância do controlador,
+      tag: 'pokemon_controller_${widget.pokemonIdentifier.id}',
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    // Novo valor atribuído.
-    state = const XState.success();
-
     // InkWell: widget utilizado para transformar qualquer outro widget
     // filho em um botão.
     return InkWell(
       borderRadius: const BorderRadius.all(DSConstProperty.radius),
-      onTap: () => log('Navigation'),
+      onTap: () => context.pushNamed(
+        AppRoutes.pokemon,
+        pathParameters: {
+          AppRoutes.pokemonId: controller.id.toString(),
+        },
+      ),
       child: DecoratedBox(
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(DSConstProperty.radius),
@@ -55,15 +76,17 @@ class _PokemonListCardState extends State<PokemonListCard> {
         /// loading (carregamento), sucess (sucesso), orElse, que significa caso
         /// os outros estados não precisem ser mostrados, o que será mostrado
         /// será esse estado, no caso error.
-        child: state.maybeMap(
-          loading: (_) => PokemonListCardLoading(
-            pokemonID: widget.pokemonIdentifier,
-          ),
-          success: (_) => PokemonListCardSucess(
-            pokemon: kPokemonDetailsMock,
-          ),
-          orElse: () => PokemonListCardError(
-            pokemonID: widget.pokemonIdentifier,
+        child: Obx(
+          () => controller.status.value.maybeMap(
+            loading: (_) => PokemonListCardLoading(
+              pokemonID: widget.pokemonIdentifier,
+            ),
+            success: (_) => PokemonListCardSucess(
+              pokemon: controller.pokemon!,
+            ),
+            orElse: () => PokemonListCardError(
+              pokemonID: widget.pokemonIdentifier,
+            ),
           ),
         ),
       ),

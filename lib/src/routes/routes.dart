@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../common/presentation/page_not_found.dart';
 import '../features/pokelist/presentation/pokelist_page.dart';
 // import '../features/pokemon/presentation/pokemon_page.dart';
+import '../features/pokemon/presentation/pokemon_page.dart';
 import 'app_routes.dart';
 
 /// Mixin criado para definir os objetos do tipo [GoRoute] da aplicação.
@@ -41,32 +42,32 @@ mixin Routes {
               );
             },
           ),
-          // GoRoute(
-          //   name: AppRoutes.pokemon,
-          //   path: AppRoutes.pokemonPath,
-          //   parentNavigatorKey: rootNavigatorKey,
-          //   pageBuilder: (
-          //     BuildContext context,
-          //     GoRouterState state,
-          //   ) {
-          //     final int? id = int.tryParse(
-          //       state.pathParameters[AppRoutes.pokemonId] ?? '',
-          //     );
+          GoRoute(
+            name: AppRoutes.pokemon,
+            path: AppRoutes.pokemonPath,
+            parentNavigatorKey: rootNavigatorKey,
+            pageBuilder: (
+              BuildContext context,
+              GoRouterState state,
+            ) {
+              final int? id = int.tryParse(
+                state.pathParameters[AppRoutes.pokemonId] ?? '',
+              );
 
-          //     if (id == null) {
-          //       return const MaterialPage<Widget>(
-          //         child: PageNotFound(),
-          //       );
-          //     } else {
-          //       return MaterialPage<Widget>(
-          //         child: PokemonPage(
-          //           key: state.pageKey,
-          //           id: id,
-          //         ),
-          //       );
-          //     }
-          //   },
-          // ),
+              if (id == null) {
+                return const MaterialPage<Widget>(
+                  child: PageNotFound(),
+                );
+              } else {
+                return MaterialPage<Widget>(
+                  child: PokemonPage(
+                    key: state.pageKey,
+                    id: id,
+                  ),
+                );
+              }
+            },
+          ),
         ],
       );
 }

@@ -3,7 +3,7 @@ import 'package:injectable/injectable.dart';
 import 'injection.config.dart';
 
 // Inicialização da instância do GeIt e criação de método de inicialização.
-/// [getIt] is the GetIt instance
+/// [getIt] is the GetIt instanc
 final GetIt getIt = GetIt.I;
 
 @InjectableInit(preferRelativeImports: false)

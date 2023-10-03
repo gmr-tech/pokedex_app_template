@@ -3,9 +3,13 @@
 
 import 'package:flutter/material.dart';
 
-/// Este arquivo foi criado para desenvolver um método que possa limitar
-/// o tamanho utilizado por uma string, desta forma, evitando overflow,
-/// neste caso utilizado na página de visualização de cada Pokémon.
+/// Esta função calcula o tamanho necessário para exibir uma string em uma
+/// única linha, usando o estilo de texto especificado. Ela é útil para evitar
+/// que o texto cause um overflow quando exibido em um espaço limitado, como
+/// na página de visualização de cada Pokémon.
+///
+/// Retorna um objeto `Size` que representa o tamanho necessário para exibir o
+/// texto em uma única linha com o estilo especificado.
 Size getOneLineTextSize(String text, TextStyle style, BuildContext context) {
   return (TextPainter(
     text: TextSpan(text: text, style: style),

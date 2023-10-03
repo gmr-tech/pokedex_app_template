@@ -28,6 +28,10 @@ class PokeListPage extends StatefulWidget {
 class _PokeListPageState extends State<PokeListPage> {
   /// Instância do controller da pokelist criado para conseguir acessar e
   /// utilizar os métodos e variáveis criados no arquivo.
+  /// Ele recebe como parâmetro o contrato do repositório para que não precise
+  /// se preocupar com a criação de uma instância do repositório. Em vez disso,
+  /// recebe uma instância singleton já criada do repositório quando
+  /// é construída.
   final controller = PokeListController(getIt<IPokeListRepository>());
 
   @override

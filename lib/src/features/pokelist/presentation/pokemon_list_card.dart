@@ -32,14 +32,18 @@ class PokemonListCard extends StatefulWidget {
 }
 
 class _PokemonListCardState extends State<PokemonListCard> {
-// Obtém o id como parâmetro e controlador de fluxo para garantir
-// que o usuário possa carregar qualquer
+// Instância de PokemonController que será inicializaada tardimanente no método
+// `initState()` para que possa ser buscado as informações do pokémon
+// pelo id.
 // ignore: avoid-late-keyword
   late final PokemonController controller;
 
   // [initState] inicializa o estado e configura um PokemonController.
   // O PokemonController é usado para buscar as informações
   // sobre o Pokémon com base em seu ID.
+  // A instância do controlador é criada e registrada com o GetX usando Get.put
+  // no initState() para que ele esteja disponível para uso em outras partes do
+  // widget PokemonListCard.
   @override
   void initState() {
     super.initState();

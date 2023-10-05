@@ -2,6 +2,8 @@
 
 /// String constante criada para facilitar a utilização do caminho da pasta
 /// de ícones.
+// O path não precisa estar em uma classe
+// ignore: prefer-static-class
 const _path = 'assets/icons';
 
 /// Enum criado para facilitar a utilização do caminho de cada ícone, evitando

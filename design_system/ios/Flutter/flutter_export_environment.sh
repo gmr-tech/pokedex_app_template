@@ -1,9 +1,9 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=C:\Users\lmlin\fvm\versions\3.10.5"
-export "FLUTTER_APPLICATION_PATH=C:\Users\lmlin\Desktop\GMR-TECH-Works\pokedex_app_template\design_system"
+export "FLUTTER_ROOT=/Users/gmrtech/fvm/versions/3.13.6"
+export "FLUTTER_APPLICATION_PATH=/Users/gmrtech/Documents/repos/GMR/pokedex_app_template/design_system"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
-export "FLUTTER_TARGET=lib\main.dart"
+export "FLUTTER_TARGET=lib/main.dart"
 export "FLUTTER_BUILD_DIR=build"
 export "FLUTTER_BUILD_NAME=0.0.1"
 export "FLUTTER_BUILD_NUMBER=0.0.1"

@@ -4,11 +4,11 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
 import 'package:pokedex_app_template/src/features/pokelist/application/pokelist_controller.dart';
 
-// import '../infrastructure/mock_pokelist_repository.dart';
+import '../infrastructure/mock_pokelist_repository.dart';
 
 void main() {
   final controller = Get.put<PokeListController>(
-    PokeListController(),
+    PokeListController(MockPokeListRepository()),
   );
 
 // [group] é criada para organizar os testes que possuem o mesmo contexto ou

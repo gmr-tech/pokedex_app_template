@@ -33,25 +33,8 @@ class _PokelistSortAndFilterScreenState
     extends State<PokelistSortAndFilterScreen> {
   final expansionController = ExpansionTileController();
 
-  // Variavel criada para determinar o estado dos elementos presentes no
-  // modal de ordenaçào e filtragem.
-  //
-  // Valor adicionado para inicializar.
-  XState detailsState = const XState.initial();
-
-  // Variável criada para determinar se o modo de pesquisa está ativo ou não
-  //
-  // Valor acrescentado para inicializar.
-  bool isSearching = false;
-
   @override
   Widget build(BuildContext context) {
-    // Novo valor atribuído.
-    detailsState = const XState.success();
-
-    // Novo valor atribuído.
-    isSearching = true;
-
     return Column(
       // mainAxisSize: propriedade utilizada para
       // configurar o tamanho do modal.
@@ -89,7 +72,7 @@ class _PokelistSortAndFilterScreenState
           ),
           visualDensity: VisualDensity.compact,
           title: const Text(DisplayStrings.sortingBy),
-          subtitle: Text(const SortingOrder.byIDLowHigh().display ?? ''),
+          subtitle: Text(widget.controller.sortingOrder.display ?? ''),
           onTap: () => setState(() => widget.controller.toggleSort()),
         ),
 
@@ -140,7 +123,7 @@ class _PokelistSortAndFilterScreenState
             // representado em tela com base no seu estado, sendo: sucesso,
             // erro e caso nenhum desses estados seja o mais adequado, optará
             // pelo se não.
-            children: detailsState.maybeMap(
+            children: widget.controller.detailsStatus.maybeMap(
               orElse: () => [],
               success: (_) => [
                 Row(

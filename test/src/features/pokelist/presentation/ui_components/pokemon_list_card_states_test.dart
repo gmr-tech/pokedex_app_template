@@ -28,7 +28,10 @@ void main() {
       // continue sendo executado sem esperar a conclusão dos futures
       // representados nos tests.
       unawaited(
-        //
+        // [goldenTest] é usado para verificar se a aparência visual da
+        // inteface permanece consistente ao longo do tempo. Ele compara
+        // a renderização atual da UI com uma imagem de referência (golden
+        // image) predefinida e falhará se houver diferenças visuais.
         goldenTest(
           'Pokemon list card states',
           fileName: 'pokemon_list_card',

@@ -27,7 +27,18 @@ class DisplayStrings {
   static const String loadingPokemons = 'Loading pokemons...';
   static const String errorLoadingPokemons = 'Error loading pokemons...';
 
+  static const String loadingPokemon = 'Loading pokemon...';
+  static const String errorLoadingPokemon = 'Error loading pokemon...';
+
   static const String refresh = 'Refresh';
+
+  static const String about = 'About';
+  static const String weigth = 'Weigth';
+  static const String height = 'Height';
+  static const String moves = 'Main moves';
+  static const String baseStats = 'Base Stats';
+
+  static const String addToFavorites = 'Add to favorites';
 
   static const String emptyPokemonsMessage =
       'No pokemons found with givens filters or search term';

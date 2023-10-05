@@ -4,16 +4,15 @@
 
 import 'dart:async';
 import 'dart:developer';
-
+import 'package:injectable/injectable.dart';
 import 'package:mobx/mobx.dart';
 
-import '../../../../mock/pokemon_details.mock.dart';
-import '../../../../mock/pokemon_identifier.mock.dart';
 import '../../../common/domain/entities/pokemon.dart';
 import '../../../common/domain/entities/pokemon_identifier.dart';
 import '../../../common/domain/entities/pokemon_type.dart';
 import '../../../common/domain/sorting_order.dart';
 import '../../../common/domain/x_state.dart';
+import '../domain/i_pokelist_repository.dart';
 
 part 'pokelist_controller.g.dart';
 
@@ -24,13 +23,14 @@ part 'pokelist_controller.g.dart';
 /// aplicação e também ações que serão disparadas e consequentemente geraram
 /// reações, resultando na rebuild da tela.
 
+@injectable
 class PokeListController = _PokeListController with _$PokeListController;
 
 /// PokelistController foi criada para adicicionar os métodos e dados que serão
 /// alterados durante a execução do app. Utiliza-se do mixin **Store**, para que
 /// o MobX possa rastrear os estados observáveis e as ações.
 abstract class _PokeListController with Store {
-  _PokeListController() {
+  _PokeListController(this._repository) {
     // O método `unawaited` é utilizado para não esperar o resultado total
     // do método fetchAllPokemonsIdentifiers, sendo assim, continuando a
     // execução da aplicação.
@@ -42,6 +42,8 @@ abstract class _PokeListController with Store {
     // fato da busca demorar.
     unawaited(fetchAllPokemonsIdentifiers());
   }
+
+  final IPokeListRepository _repository;
 
   /// Essa lista é privada para evitar que partes externas do código acessem
   /// ou modifiquem os dados recebidos diretamente.
@@ -132,14 +134,23 @@ abstract class _PokeListController with Store {
     /// ele for chamado.
     status = const XState.loading();
 
+    final result = await _repository.fetchAllPokemonsIdentifiers();
+
     await Future.delayed(const Duration(seconds: 1));
 
-    _allPokemonsIdentifiers.addAll(kPokemonIdentifierListMock);
-    allPokemonsIdentifiers.addAll(kPokemonIdentifierListMock);
-    await _fetchPokemonsDetails();
+    result.fold(
+      (failure) {
+        status = XState.error(failure: failure);
+      },
+      (returnedPokemon) {
+        _allPokemonsIdentifiers.addAll(returnedPokemon);
+        allPokemonsIdentifiers.addAll(returnedPokemon);
+        _fetchPokemonsDetails();
 
-    /// Estado final do método, no caso o de sucesso.
-    status = const XState.success();
+        /// Estado final do método, no caso o de sucesso.
+        status = const XState.success();
+      },
+    );
   }
 
   /// Método criado para buscar e armazenar todos os pokémons dentro da
@@ -155,11 +166,18 @@ abstract class _PokeListController with Store {
     // loop criado para adicionar cada pokémon da lista
     // kPokemonDetailsListMock dentro da lista _allPokemons e allPokemons.
     for (int i = 0; i < allPokemonsIdentifiers.length; i++) {
-      final pokemon = kPokemonDetailsListMock[i];
+      final result = await _repository.fetchPokemonDetails(
+        allPokemonsIdentifiers[i].id,
+      );
 
-      log(pokemon.name);
-      _allPokemons.add(pokemon);
-      allPokemons.add(pokemon);
+      result.fold(
+        (failure) => log('Fail'),
+        (pokemon) {
+          log(pokemon.name);
+          _allPokemons.add(pokemon);
+          allPokemons.add(pokemon);
+        },
+      );
     }
 
     // Estado final da busca dos detalhes dos pokémons.

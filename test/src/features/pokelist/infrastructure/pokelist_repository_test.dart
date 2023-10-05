@@ -17,7 +17,7 @@ void main() {
           final result =
               await mockPokeListRepository.fetchAllPokemonsIdentifiers();
 
-          // [expect] é uti para fazer asserções nos testes. Verifica se
+          // [expect] é util para fazer asserções nos testes. Verifica se
           // uma condição é verdadeira e, se não for, falhará o teste.
           //
           // `expect(result.isRight(), isTrue)` - Verifica se o resultado

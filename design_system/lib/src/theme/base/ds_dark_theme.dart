@@ -33,17 +33,17 @@ final ColorScheme _darkColorScheme = const ColorScheme.dark().copyWith(
 /// personalizados, incluindo cores, estilos de texto e estilos de botões. Ele
 /// faz parte de um arquivo de definição de tema mais amplo (ds_theme.dart)
 /// usado para personalizar a aparência da aplicação em um tema escuro.
-/// 
-/// Os atributos que foram configurados por meio do método `copyWith()`, 
+///
+/// Os atributos que foram configurados por meio do método `copyWith()`,
 /// do `ThemeData.dark()`, foram:
-/// 
+///
 /// * `appBarTheme`: O bloco `appBarTheme` define a aparência do
 /// AppBar (barra de aplicativo) do tema escuro, incluindo
 /// as cores de fundo, cores do texto e estilos dos ícones.
-/// 
+///
 /// * `textTheme`: O bloco `textTheme` define os estilos de texto para
 /// diferentes elementos do tema escuro, como títulos e corpo do texto.
-/// 
+///
 /// * `elevatedButtonTheme`: O bloco `elevatedButtonTheme` define o estilo
 /// dos botões elevados (ElevatedButton) para o tema escuro. Ele
 /// especifica a cor de fundo e a cor do texto com base no estado do botão
@@ -68,6 +68,51 @@ final ThemeData _darkThemeData = ThemeData.dark().copyWith(
     ),
     titleTextStyle: DSBaseTypography.textTheme.headlineMedium!.copyWith(
       color: _darkColorScheme.onPrimary,
+    ),
+  ),
+  chipTheme: ChipThemeData(
+    shape: const StadiumBorder(
+      side: BorderSide(width: 0),
+    ),
+    labelStyle: DSBaseTypography.textTheme.bodyLarge!.copyWith(
+      color: DSConstColor.dark,
+    ),
+    backgroundColor: DSConstColor.light,
+    labelPadding: const EdgeInsets.symmetric(
+      vertical: DSConstSpace.xxSmall,
+      horizontal: DSConstSpace.xSmall,
+    ),
+  ),
+  dividerTheme: const DividerThemeData(
+    color: DSConstColor.medium,
+    thickness: DSConstSize.dividerThickness,
+    space: DSConstSpace.xLarge,
+  ),
+  inputDecorationTheme: InputDecorationTheme(
+    fillColor: _darkColorScheme.background,
+    filled: true,
+    border: const OutlineInputBorder(
+      borderRadius: BorderRadius.all(DSConstProperty.radius),
+      borderSide: BorderSide.none,
+    ),
+    focusedBorder: OutlineInputBorder(
+      borderRadius: const BorderRadius.all(DSConstProperty.radius),
+      borderSide: BorderSide(
+        color: _darkColorScheme.onPrimary,
+        width: DSConstSize.borderThicknessLarge,
+      ),
+    ),
+    contentPadding: const EdgeInsets.fromLTRB(
+      DSConstSpace.medium,
+      DSConstSpace.small,
+      DSConstSpace.medium,
+      DSConstSpace.small,
+    ),
+    iconColor: _darkColorScheme.primary,
+    prefixIconColor: _darkColorScheme.primary,
+    suffixIconColor: _darkColorScheme.primary,
+    hintStyle: DSBaseTypography.textTheme.bodyMedium!.copyWith(
+      color: _darkColorScheme.onBackground,
     ),
   ),
   textTheme: DSBaseTypography.textTheme.copyWith(

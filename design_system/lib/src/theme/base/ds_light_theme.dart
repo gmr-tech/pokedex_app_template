@@ -34,19 +34,19 @@ final ColorScheme _lightColorScheme = const ColorScheme.light().copyWith(
 /// personalizados, incluindo cores, estilos de texto e estilos de botões. Ele
 /// faz parte de um arquivo de definição de tema mais amplo (ds_theme.dart)
 /// usado para personalizar a aparência da aplicação em um tema claro.
-/// 
-/// Os atributos que foram configurados por meio do método `copyWith()`, 
+///
+/// Os atributos que foram configurados por meio do método `copyWith()`,
 /// do `ThemeData.light()`, foram:
-/// 
-/// * `appBarTheme`: o bloco `appBarTheme` define a aparência do AppBar 
-/// (barra de aplicativo) do tema claro, incluindo as cores de fundo, 
+///
+/// * `appBarTheme`: o bloco `appBarTheme` define a aparência do AppBar
+/// (barra de aplicativo) do tema claro, incluindo as cores de fundo,
 /// cores do texto e estilos dos ícones.
-/// 
-/// * `textTheme`: o bloco `textTheme` define os estilos de texto para 
+///
+/// * `textTheme`: o bloco `textTheme` define os estilos de texto para
 ///  diferentes elementos do tema escuro, como títulos e corpo do texto.
-/// 
-/// * `elevatedButtonTheme`: o bloco `elevatedButtonTheme` define o estilo 
-/// dos botões elevados (ElevatedButton) para o tema claro. Ele especifica 
+///
+/// * `elevatedButtonTheme`: o bloco `elevatedButtonTheme` define o estilo
+/// dos botões elevados (ElevatedButton) para o tema claro. Ele especifica
 /// a cor de fundo e a cor do texto com base no estado do botão (por exemplo:
 /// desabilitado e pressionado).
 ///
@@ -55,7 +55,6 @@ final ThemeData _lightThemeData = ThemeData.light().copyWith(
   useMaterial3: true,
   colorScheme: _lightColorScheme,
   scaffoldBackgroundColor: _lightColorScheme.background,
-
   appBarTheme: AppBarTheme(
     backgroundColor: _lightColorScheme.primaryContainer,
     foregroundColor: _lightColorScheme.onPrimary,
@@ -72,7 +71,60 @@ final ThemeData _lightThemeData = ThemeData.light().copyWith(
       color: _lightColorScheme.onPrimary,
     ),
   ),
-
+  cardTheme: const CardTheme(
+    color: DSConstColor.white,
+    elevation: 0,
+    shadowColor: Colors.transparent,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(DSConstProperty.radius),
+    ),
+  ),
+  chipTheme: ChipThemeData(
+    shape: const StadiumBorder(
+      side: BorderSide(width: 0),
+    ),
+    labelStyle: DSBaseTypography.textTheme.bodyLarge!.copyWith(
+      color: DSConstColor.light,
+    ),
+    backgroundColor: DSConstColor.dark,
+    labelPadding: const EdgeInsets.symmetric(
+      vertical: DSConstSpace.xxSmall,
+      horizontal: DSConstSpace.xSmall,
+    ),
+  ),
+  dividerTheme: const DividerThemeData(
+    color: DSConstColor.light,
+    thickness: DSConstSize.dividerThickness,
+    space: DSConstSpace.xLarge,
+  ),
+  disabledColor: DSConstColor.light,
+  inputDecorationTheme: InputDecorationTheme(
+    fillColor: _lightColorScheme.background,
+    filled: true,
+    border: const OutlineInputBorder(
+      borderRadius: BorderRadius.all(DSConstProperty.radius),
+      borderSide: BorderSide.none,
+    ),
+    focusedBorder: OutlineInputBorder(
+      borderRadius: const BorderRadius.all(DSConstProperty.radius),
+      borderSide: BorderSide(
+        color: _lightColorScheme.primaryContainer,
+        width: DSConstSize.borderThicknessLarge,
+      ),
+    ),
+    contentPadding: const EdgeInsets.fromLTRB(
+      DSConstSpace.medium,
+      DSConstSpace.small,
+      DSConstSpace.medium,
+      DSConstSpace.small,
+    ),
+    iconColor: _lightColorScheme.primary,
+    prefixIconColor: _lightColorScheme.primary,
+    suffixIconColor: _lightColorScheme.primary,
+    hintStyle: DSBaseTypography.textTheme.bodyMedium!.copyWith(
+      color: _lightColorScheme.onBackground,
+    ),
+  ),
   textTheme: DSBaseTypography.textTheme.copyWith(
     titleLarge: DSBaseTypography.textTheme.titleLarge!.copyWith(
       color: _lightColorScheme.onSurface,
@@ -102,7 +154,6 @@ final ThemeData _lightThemeData = ThemeData.light().copyWith(
       color: _lightColorScheme.onSurface,
     ),
   ),
-
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: _baseButtonStyle.copyWith(
       backgroundColor: MaterialStateProperty.resolveWith(
@@ -128,6 +179,12 @@ final ThemeData _lightThemeData = ThemeData.light().copyWith(
         },
       ),
     ),
+  ),
+  iconTheme: IconThemeData(
+    color: _lightColorScheme.onSurface,
+  ),
+  primaryIconTheme: IconThemeData(
+    color: _lightColorScheme.primary,
   ),
   extensions: <ThemeExtension<dynamic>>[DSCustomTheme.light],
 );

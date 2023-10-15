@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 /// do design do app.
 class DSConstProperty {
   static const double squareAspectRatio = 1;
+
   static const double standardAspectRatio = 4 / 3;
   static const double wideAspectRatio = 16 / 9;
   static const double ultraWideAspectRatio = 21 / 9;

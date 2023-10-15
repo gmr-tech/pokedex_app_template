@@ -4,6 +4,7 @@
 import 'package:flutter/material.dart';
 import '../constant/ds_const_color.dart';
 import '../constant/ds_const_property.dart';
+import '../constant/ds_const_size.dart';
 import '../constant/ds_const_space.dart';
 import '../custom/ds_custom_theme.dart';
 import 'ds_base_typography.dart';
